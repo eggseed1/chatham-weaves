@@ -11,7 +11,7 @@ export const siteConfig = {
   name: "Chatham Weaves",
   fullName: "Chatham Weaves by Janene Marie",
   maker: "Janene Marie",
-  tagline: "A little Cape Cod studio for Nantucket baskets & jewelry",
+  tagline: "Handmade Nantucket weaves from the shores of Chatham",
   description:
     "Artisan Nantucket baskets, jewelry, and accessories handwoven in Chatham, Cape Cod. Custom commissions available.",
   url: "https://chathamweaves.com", // PLACEHOLDER: replace with live domain

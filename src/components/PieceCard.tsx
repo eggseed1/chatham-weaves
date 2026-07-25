@@ -19,8 +19,6 @@ export function PieceCard({
 }: PieceCardProps) {
   const price = formatPrice(piece.price);
   const image = piece.images[0];
-  const live =
-    piece.status === "available" || piece.status === "made-to-order";
 
   return (
     <article
@@ -41,18 +39,25 @@ export function PieceCard({
             )}
           </div>
         </div>
-        <div className="mt-3 space-y-1.5 px-0.5">
-          <h3 className="font-serif text-lg text-navy tracking-tight transition-colors group-hover:text-seafoam md:text-[1.15rem]">
+        <div className="mt-3 space-y-1 px-0.5">
+          <h3 className="font-serif text-lg text-navy tracking-tight transition-colors group-hover:text-oxblood md:text-[1.15rem]">
             {piece.name}
           </h3>
-          <p className="label-archival !text-[0.6rem]">
+          <p className="label-archival !text-[0.62rem]">
             {CATEGORY_LABELS[piece.category]}
-          </p>
-          <div className="pt-0.5">
-            <span className={`chip ${live ? "chip-coral" : ""} !py-1`}>
+            <span className="mx-2 text-sand" aria-hidden>
+              ·
+            </span>
+            <span
+              className={
+                piece.status === "available" || piece.status === "made-to-order"
+                  ? "text-oxblood"
+                  : ""
+              }
+            >
               {STATUS_LABELS[piece.status]}
             </span>
-          </div>
+          </p>
           {price && (
             <p className="font-serif text-sm text-charcoal-soft">{price}</p>
           )}

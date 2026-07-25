@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { siteConfig } from "@/config/site";
-import { Scallop, TinyBasket } from "@/components/Accents";
 
 interface MobileMenuProps {
   open: boolean;
@@ -38,9 +37,8 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
         <Link
           href="/"
           onClick={onClose}
-          className="flex items-center gap-2 font-serif text-lg tracking-wide text-navy"
+          className="font-serif text-lg tracking-wide text-navy"
         >
-          <TinyBasket className="text-seafoam" size={18} />
           {siteConfig.name}
         </Link>
         <button
@@ -77,10 +75,9 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
         </a>
       </nav>
 
-      <div className="flex items-center gap-3 px-8 pb-10">
-        <Scallop className="ornament-coral" size={20} />
-        <p className="font-script text-xl text-seafoam">by hand, always</p>
-      </div>
+      <p className="px-8 pb-10 font-script text-xl text-oxblood-faded">
+        by hand, always
+      </p>
     </div>
   );
 }
@@ -103,31 +100,23 @@ export function Header() {
           scrolled ? "bg-ivory/97 border-b border-rule" : "bg-transparent"
         }`}
       >
-        {!scrolled && (
-          <div className="hidden border-b border-dashed border-seafoam/25 bg-cream/70 md:block">
-            <p className="mx-auto max-w-7xl px-6 py-1.5 text-center font-script text-[0.95rem] text-seafoam lg:px-10">
-              handmade on Cape Cod · text Janene anytime · every weave is an act of love
-            </p>
-          </div>
-        )}
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-10">
           <Link
             href="/"
-            className="flex items-center gap-2 font-serif text-lg md:text-xl tracking-[0.02em] text-navy transition-colors hover:text-oxblood"
+            className="font-serif text-lg md:text-xl tracking-[0.02em] text-navy transition-colors hover:text-oxblood"
           >
-            <TinyBasket className="text-seafoam" size={18} />
             {siteConfig.name}
           </Link>
 
           <nav
-            className="hidden md:flex items-center gap-7"
+            className="hidden md:flex items-center gap-8"
             aria-label="Primary"
           >
             {siteConfig.nav.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="label-archival transition-colors hover:text-seafoam"
+                className="label-archival transition-colors hover:text-oxblood"
               >
                 {item.label}
               </Link>
@@ -136,9 +125,9 @@ export function Header() {
               href={siteConfig.social.instagram.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="chip chip-coral !normal-case !tracking-normal !text-[0.72rem] !font-script !px-3"
+              className="label-archival text-oxblood transition-colors hover:text-navy"
             >
-              Instagram ♡
+              Instagram
             </a>
           </nav>
 

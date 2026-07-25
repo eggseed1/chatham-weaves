@@ -6,7 +6,6 @@ import { StorySection } from "@/components/StorySection";
 import { CollectionSection } from "@/components/CollectionSection";
 import { CommissionCTA } from "@/components/CommissionCTA";
 import { InstagramGallery } from "@/components/InstagramGallery";
-import { DecorativeRule, SectionEyebrow, Wave } from "@/components/Accents";
 import { getFeaturedPieces } from "@/lib/pieces";
 import { instagramPosts } from "@/data/instagram";
 import { siteConfig } from "@/config/site";
@@ -30,20 +29,16 @@ export default function HomePage() {
 
       <section className="bg-ivory py-16 lg:py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
-          <DecorativeRule motif="wave" className="mb-10 max-w-sm" />
-          <div className="mb-10 flex flex-col gap-3 sm:mb-14 sm:flex-row sm:items-end sm:justify-between">
+          <div className="mb-10 flex flex-col gap-3 border-b border-rule pb-8 sm:mb-14 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <SectionEyebrow accent="seafoam">Fresh from the studio</SectionEyebrow>
+              <p className="label-archival text-oxblood">Selected Work</p>
               <h2 className="mt-3 font-serif text-[1.85rem] tracking-tight text-navy md:text-[2.15rem]">
                 Featured Pieces
               </h2>
-              <p className="mt-2 font-script text-lg text-oxblood-faded">
-                little treasures, woven one by one
-              </p>
             </div>
             <Link
               href="/collection"
-              className="label-archival transition-colors hover:text-seafoam"
+              className="label-archival transition-colors hover:text-oxblood"
             >
               View Full Collection →
             </Link>
@@ -66,18 +61,6 @@ export default function HomePage() {
               />
             ))}
           </div>
-        </div>
-      </section>
-
-      <section className="border-y border-dashed border-seafoam/30 bg-cream/80 py-8">
-        <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-center gap-x-8 gap-y-3 px-6 text-center">
-          <p className="font-script text-xl text-seafoam">Cape Cod summers</p>
-          <Wave className="ornament-coral hidden sm:block" size={30} />
-          <p className="font-script text-xl text-oxblood-faded">
-            Nantucket tradition
-          </p>
-          <Wave className="ornament-sky hidden sm:block" size={30} />
-          <p className="font-script text-xl text-sky">made just for you</p>
         </div>
       </section>
 

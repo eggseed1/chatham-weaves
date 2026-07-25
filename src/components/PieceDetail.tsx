@@ -23,7 +23,7 @@ export function PieceDetail({ piece }: PieceDetailProps) {
       </div>
 
       <div className="lg:col-span-5 lg:pt-2 lg:translate-y-2">
-        <p className="label-archival flex items-center gap-2 text-seafoam">
+        <p className="label-archival text-oxblood">
           {CATEGORY_LABELS[piece.category]}
         </p>
         <hr className="rule-short mt-4" />
@@ -31,14 +31,8 @@ export function PieceDetail({ piece }: PieceDetailProps) {
           {piece.name}
         </h1>
 
-        <div className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-2">
-          <span
-            className={`chip ${
-              piece.status === "available" || piece.status === "made-to-order"
-                ? "chip-coral"
-                : ""
-            }`}
-          >
+        <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2">
+          <span className="label-archival !text-[0.62rem] text-oxblood">
             {STATUS_LABELS[piece.status]}
           </span>
           {price && (

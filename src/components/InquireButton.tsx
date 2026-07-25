@@ -16,11 +16,11 @@ export function InquireButton({
   className = "",
 }: InquireButtonProps) {
   const base =
-    "inline-flex items-center justify-center rounded-full px-6 py-2.5 font-sans text-[0.68rem] uppercase tracking-[0.18em] transition-colors";
+    "inline-flex items-center justify-center px-6 py-2.5 font-sans text-[0.68rem] uppercase tracking-[0.2em] transition-colors";
   const styles =
     variant === "primary"
-      ? "bg-seafoam text-white border border-seafoam hover:bg-navy hover:border-navy"
-      : "border border-dashed border-oxblood/45 text-oxblood hover:bg-oxblood hover:text-white hover:border-oxblood";
+      ? "bg-navy text-ivory border border-navy hover:bg-oxblood hover:border-oxblood"
+      : "border border-navy/35 text-navy hover:border-oxblood hover:text-oxblood";
 
   if (external) {
     return (

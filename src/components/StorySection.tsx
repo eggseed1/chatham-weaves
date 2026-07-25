@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import { DecorativeRule, SectionEyebrow } from "@/components/Accents";
 
 interface StorySectionProps {
   imageSrc: string;
@@ -13,7 +12,8 @@ export function StorySection({
 }: StorySectionProps) {
   return (
     <section className="relative bg-ivory py-20 lg:py-28">
-      <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 lg:grid-cols-12 lg:gap-10 lg:px-10">
+      <hr className="rule mx-auto max-w-7xl px-6 lg:px-10" />
+      <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 pt-16 lg:grid-cols-12 lg:gap-10 lg:px-10 lg:pt-20">
         <div className="relative lg:col-span-6 lg:translate-x-2">
           <div className="photo-plate photo-natural rotate-[0.5deg]">
             <div className="relative aspect-[4/5] overflow-hidden bg-linen">
@@ -27,13 +27,13 @@ export function StorySection({
             </div>
           </div>
           <p className="mt-3 ml-2 font-script text-xl text-oxblood-faded -rotate-1">
-            from Nantucket summers ♡
+            from Nantucket summers
           </p>
         </div>
 
         <div className="lg:col-span-5 lg:col-start-8 lg:-translate-y-6">
-          <SectionEyebrow accent="coral">Meet Janene</SectionEyebrow>
-          <DecorativeRule motif="hydrangea" className="mt-4 max-w-[12rem]" />
+          <p className="label-archival text-oxblood">The Maker</p>
+          <hr className="rule-short mt-4" />
           <h2 className="mt-5 font-serif text-[1.85rem] tracking-tight text-navy md:text-[2.15rem] md:leading-snug">
             Honoring a tradition first loved on Nantucket
           </h2>
@@ -41,14 +41,14 @@ export function StorySection({
             Janene Marie first recognized the beauty of Nantucket baskets while
             vacationing on the island as a youth. She promised herself she would
             one day learn to weave — and after years of tutelage and East Coast
-            weaving conferences, that promise became this little Chatham studio.
+            weaving conferences, that promise became Chatham Weaves.
           </p>
-          <p className="mt-4 font-script text-xl text-seafoam">
+          <p className="mt-4 font-serif text-[0.98rem] italic leading-relaxed text-charcoal-soft">
             Every weave is an act of love.
           </p>
           <Link
             href="/about"
-            className="mt-8 inline-flex rounded-full border border-dashed border-oxblood/40 px-5 py-2 font-sans text-[0.68rem] uppercase tracking-[0.18em] text-oxblood transition-colors hover:bg-oxblood hover:text-white"
+            className="mt-8 inline-flex border-b border-oxblood/50 pb-0.5 font-sans text-[0.68rem] uppercase tracking-[0.2em] text-oxblood transition-colors hover:border-oxblood"
           >
             Read the Story
           </Link>

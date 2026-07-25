@@ -1,31 +1,26 @@
 @import "tailwindcss";
 
 :root {
-  /* Warm cream paper — sunlit beach cottage */
-  --ivory: #f6eee3;
-  --cream: #efe4d2;
-  --linen: #e4d5be;
-  --sand: #d2bfa0;
-  /* Soft coastal ink */
-  --navy: #243447;
-  --charcoal: #243447;
-  --charcoal-soft: #4a5565;
-  /* Coral / faded rose accent (coastal cute) */
-  --oxblood: #c45c5c;
-  --oxblood-faded: #d4847a;
-  /* Seafoam + sky — coastal accent pair */
-  --seafoam: #7fa8a0;
-  --seafoam-soft: #a8c7c1;
-  --sky: #8fb4c9;
-  --hydrangea: #9aa8c7;
-  /* Keep coastal alias as seafoam for existing classes */
-  --coastal: #7fa8a0;
-  --coastal-soft: #a8c7c1;
-  --warm-gray: #8a8072;
-  --white: #fffaf3;
-  --border: rgba(36, 52, 71, 0.14);
-  --rule: rgba(36, 52, 71, 0.18);
-  --focus: #7fa8a0;
+  /* Warm cream paper */
+  --ivory: #f3ebdd;
+  --cream: #ebe1cf;
+  --linen: #e0d3bc;
+  --sand: #c9b89a;
+  /* Dark ink / navy */
+  --navy: #1a2230;
+  --charcoal: #1a2230;
+  --charcoal-soft: #3d4554;
+  /* Oxblood / faded red */
+  --coastal: #8c3b3b;
+  --coastal-soft: #a65d5a;
+  --oxblood: #8c3b3b;
+  --oxblood-faded: #a65d5a;
+  /* Supporting */
+  --warm-gray: #7a7266;
+  --white: #faf6ee;
+  --border: rgba(26, 34, 48, 0.16);
+  --rule: rgba(26, 34, 48, 0.22);
+  --focus: #8c3b3b;
 }
 
 @theme inline {
@@ -38,10 +33,6 @@
   --color-coastal-soft: var(--coastal-soft);
   --color-oxblood: var(--oxblood);
   --color-oxblood-faded: var(--oxblood-faded);
-  --color-seafoam: var(--seafoam);
-  --color-seafoam-soft: var(--seafoam-soft);
-  --color-sky: var(--sky);
-  --color-hydrangea: var(--hydrangea);
   --color-warm-gray: var(--warm-gray);
   --color-charcoal: var(--charcoal);
   --color-charcoal-soft: var(--charcoal-soft);
@@ -66,13 +57,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image:
-    radial-gradient(ellipse 80% 50% at 100% 0%, rgba(143, 180, 201, 0.12), transparent 55%),
-    radial-gradient(ellipse 60% 40% at 0% 100%, rgba(127, 168, 160, 0.1), transparent 50%),
-    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.045'/%3E%3C/svg%3E");
 }
 
 ::selection {
-  background: color-mix(in srgb, var(--seafoam) 28%, white);
+  background: color-mix(in srgb, var(--oxblood) 22%, white);
   color: var(--navy);
 }
 
@@ -101,25 +90,15 @@ body {
 }
 
 .rule-short {
-  height: 1.5px;
-  width: 3rem;
-  background: var(--seafoam);
+  height: 1px;
+  width: 3.5rem;
+  background: var(--oxblood);
   border: 0;
-  opacity: 0.85;
-  border-radius: 1px;
-}
-
-.rule-coral {
-  height: 1.5px;
-  width: 3rem;
-  background: var(--oxblood-faded);
-  border: 0;
-  opacity: 0.85;
-  border-radius: 1px;
+  opacity: 0.75;
 }
 
 .rule-double {
-  height: 5px;
+  height: 3px;
   width: 100%;
   border-top: 1px solid var(--rule);
   border-bottom: 1px solid var(--rule);
@@ -133,68 +112,40 @@ body {
       0deg,
       transparent,
       transparent 3px,
-      rgba(36, 52, 71, 0.028) 3px,
-      rgba(36, 52, 71, 0.028) 4px
+      rgba(26, 34, 48, 0.03) 3px,
+      rgba(26, 34, 48, 0.03) 4px
     ),
     repeating-linear-gradient(
       90deg,
       transparent,
       transparent 3px,
-      rgba(127, 168, 160, 0.04) 3px,
-      rgba(127, 168, 160, 0.04) 4px
+      rgba(26, 34, 48, 0.025) 3px,
+      rgba(26, 34, 48, 0.025) 4px
     );
-}
-
-.texture-coastal {
-  background:
-    radial-gradient(circle at 20% 30%, rgba(143, 180, 201, 0.18), transparent 40%),
-    radial-gradient(circle at 80% 70%, rgba(212, 132, 122, 0.1), transparent 35%),
-    var(--cream);
 }
 
 .label-archival {
   font-family: var(--font-sans), var(--font-serif), ui-serif, Georgia, serif;
   font-size: 0.6875rem;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--warm-gray);
 }
 
 .note-script {
   font-family: var(--font-script), cursive;
-  font-size: 1.4rem;
+  font-size: 1.35rem;
   line-height: 1.35;
   color: var(--oxblood-faded);
   font-weight: 400;
 }
 
-.chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  border: 1px dashed color-mix(in srgb, var(--seafoam) 55%, transparent);
-  background: color-mix(in srgb, var(--seafoam-soft) 22%, white);
-  color: var(--navy);
-  padding: 0.28rem 0.7rem;
-  font-family: var(--font-sans), ui-serif, Georgia, serif;
-  font-size: 0.62rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  border-radius: 999px;
-}
-
-.chip-coral {
-  border-color: color-mix(in srgb, var(--oxblood-faded) 50%, transparent);
-  background: color-mix(in srgb, var(--oxblood-faded) 14%, white);
-}
-
 .photo-plate {
   position: relative;
-  background: var(--white);
-  padding: 0.6rem 0.6rem 1.65rem;
+  background: var(--cream);
+  padding: 0.55rem 0.55rem 1.75rem;
+  box-shadow: none;
   border: 1px solid var(--border);
-  border-radius: 2px;
-  box-shadow: 3px 4px 0 rgba(127, 168, 160, 0.12);
 }
 
 .photo-plate::after {
@@ -202,27 +153,12 @@ body {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  box-shadow: inset 0 0 0 1px rgba(255, 250, 243, 0.5);
-  border-radius: 2px;
+  box-shadow: inset 0 0 0 1px rgba(250, 246, 238, 0.35);
 }
 
 .photo-natural img,
 .photo-natural {
-  filter: saturate(0.98) contrast(1.01) brightness(1.03);
-}
-
-.ornament {
-  display: inline-block;
-  color: var(--seafoam);
-  flex-shrink: 0;
-}
-
-.ornament-coral {
-  color: var(--oxblood-faded);
-}
-
-.ornament-sky {
-  color: var(--sky);
+  filter: saturate(0.92) contrast(1.02) brightness(1.02);
 }
 
 @keyframes fade-up {
@@ -245,26 +181,12 @@ body {
   }
 }
 
-@keyframes float-soft {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-4px);
-  }
-}
-
 .animate-fade-up {
   animation: fade-up 0.85s ease-out both;
 }
 
 .animate-fade-in {
   animation: fade-in 0.7s ease-out both;
-}
-
-.animate-float {
-  animation: float-soft 5s ease-in-out infinite;
 }
 
 .delay-100 {
@@ -286,8 +208,7 @@ body {
   }
 
   .animate-fade-up,
-  .animate-fade-in,
-  .animate-float {
+  .animate-fade-in {
     animation: none !important;
   }
 }

@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { CATEGORY_LABELS, type PieceCategory } from "@/types/piece";
-import { SectionEyebrow, TinyBasket } from "@/components/Accents";
 
 interface CollectionCategory {
   category: PieceCategory;
@@ -19,13 +18,11 @@ export function CollectionSection({ categories }: CollectionSectionProps) {
     <section className="bg-cream py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <div className="mb-12 flex flex-col gap-3 md:mb-16 md:max-w-md">
-          <SectionEyebrow accent="sky">Peek inside the shop</SectionEyebrow>
+          <p className="label-archival text-oxblood">Browse by Category</p>
+          <hr className="rule-short" />
           <h2 className="font-serif text-[1.85rem] tracking-tight text-navy md:text-[2.15rem]">
             The Collection
           </h2>
-          <p className="font-script text-lg text-oxblood-faded">
-            baskets, sparkle & one-of-a-kinds
-          </p>
         </div>
 
         <div className="grid gap-8 sm:grid-cols-2 lg:gap-x-10 lg:gap-y-14">
@@ -53,11 +50,12 @@ export function CollectionSection({ categories }: CollectionSectionProps) {
                 </div>
               </div>
               <div className="mt-4 flex items-baseline justify-between gap-3 px-1">
-                <h3 className="flex items-center gap-2 font-serif text-xl text-navy transition-colors group-hover:text-seafoam">
-                  <TinyBasket size={16} className="text-seafoam opacity-70" />
+                <h3 className="font-serif text-xl text-navy transition-colors group-hover:text-oxblood">
                   {CATEGORY_LABELS[cat.category]}
                 </h3>
-                <span className="chip !py-1">View</span>
+                <span className="label-archival !text-[0.6rem] text-oxblood">
+                  View
+                </span>
               </div>
             </Link>
           ))}
