@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { siteConfig } from "@/config/site";
+import { Logo } from "@/components/Logo";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -11,9 +12,9 @@ export function Footer() {
           <div className="max-w-sm">
             <Link
               href="/"
-              className="font-serif text-2xl tracking-wide text-navy"
+              className="inline-block transition-opacity hover:opacity-80"
             >
-              {siteConfig.name}
+              <Logo size="md" />
             </Link>
             <p className="mt-4 font-sans text-sm leading-relaxed text-charcoal-soft">
               Handmade Nantucket baskets, jewelry, and accessories woven in
@@ -21,10 +22,7 @@ export function Footer() {
             </p>
           </div>
 
-          <nav
-            className="flex flex-wrap gap-x-8 gap-y-3"
-            aria-label="Footer"
-          >
+          <nav className="flex flex-wrap gap-x-8 gap-y-3" aria-label="Footer">
             {siteConfig.nav.map((item) => (
               <Link
                 key={item.href}
