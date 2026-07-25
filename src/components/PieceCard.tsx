@@ -8,14 +8,9 @@ interface PieceCardProps {
   piece: Piece;
   priority?: boolean;
   className?: string;
-  /** Allow featured pieces to span full width on mobile grids */
   featuredSpan?: boolean;
 }
 
-/**
- * Editorial piece presentation — props-driven for future ecommerce data sources.
- * No cart / checkout affordances.
- */
 export function PieceCard({
   piece,
   priority = false,
@@ -24,39 +19,42 @@ export function PieceCard({
 }: PieceCardProps) {
   const price = formatPrice(piece.price);
   const image = piece.images[0];
+  const live =
+    piece.status === "available" || piece.status === "made-to-order";
 
   return (
     <article
       className={`group ${featuredSpan ? "col-span-2 md:col-span-1" : ""} ${className}`}
     >
       <Link href={`/pieces/${piece.slug}`} className="block">
-        <div className="relative aspect-[4/5] overflow-hidden bg-linen">
-          {image && (
-            <Image
-              src={image.src}
-              alt={image.alt}
-              fill
-              priority={priority}
-              sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
-              className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
-            />
-          )}
-        </div>
-        <div className="mt-4 space-y-1.5">
-          <div className="flex items-baseline justify-between gap-3">
-            <h3 className="font-serif text-xl text-navy tracking-tight transition-colors group-hover:text-coastal md:text-[1.35rem]">
-              {piece.name}
-            </h3>
+        <div className="photo-plate photo-natural !pb-3">
+          <div className="relative aspect-[4/5] overflow-hidden bg-linen">
+            {image && (
+              <Image
+                src={image.src}
+                alt={image.alt}
+                fill
+                priority={priority}
+                sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
+                className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.025]"
+              />
+            )}
           </div>
-          <p className="font-sans text-[11px] uppercase tracking-[0.18em] text-warm-gray">
+        </div>
+        <div className="mt-3 space-y-1.5 px-0.5">
+          <h3 className="font-serif text-lg text-navy tracking-tight transition-colors group-hover:text-seafoam md:text-[1.15rem]">
+            {piece.name}
+          </h3>
+          <p className="label-archival !text-[0.6rem]">
             {CATEGORY_LABELS[piece.category]}
-            <span className="mx-2 text-sand" aria-hidden>
-              ·
-            </span>
-            {STATUS_LABELS[piece.status]}
           </p>
+          <div className="pt-0.5">
+            <span className={`chip ${live ? "chip-coral" : ""} !py-1`}>
+              {STATUS_LABELS[piece.status]}
+            </span>
+          </div>
           {price && (
-            <p className="font-sans text-sm text-charcoal-soft">{price}</p>
+            <p className="font-serif text-sm text-charcoal-soft">{price}</p>
           )}
         </div>
       </Link>

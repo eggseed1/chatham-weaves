@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { siteConfig } from "@/config/site";
+import { Scallop, TinyBasket } from "@/components/Accents";
 
 interface MobileMenuProps {
   open: boolean;
@@ -33,31 +34,32 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
       aria-modal="true"
       aria-label="Navigation menu"
     >
-      <div className="flex items-center justify-between px-6 py-5 border-b border-border">
+      <div className="flex items-center justify-between px-6 py-5 border-b border-rule">
         <Link
           href="/"
           onClick={onClose}
-          className="font-serif text-xl tracking-wide text-navy"
+          className="flex items-center gap-2 font-serif text-lg tracking-wide text-navy"
         >
+          <TinyBasket className="text-seafoam" size={18} />
           {siteConfig.name}
         </Link>
         <button
           type="button"
           onClick={onClose}
-          className="font-sans text-xs uppercase tracking-[0.2em] text-charcoal-soft hover:text-navy transition-colors"
+          className="label-archival hover:text-oxblood transition-colors"
           aria-label="Close menu"
         >
           Close
         </button>
       </div>
 
-      <nav className="flex flex-1 flex-col justify-center px-8 gap-8">
+      <nav className="flex flex-1 flex-col justify-center px-8 gap-7">
         {siteConfig.nav.map((item, i) => (
           <Link
             key={item.href}
             href={item.href}
             onClick={onClose}
-            className="font-serif text-4xl text-navy tracking-tight animate-fade-up"
+            className="font-serif text-3xl text-navy tracking-tight animate-fade-up"
             style={{ animationDelay: `${i * 60}ms` }}
           >
             {item.label}
@@ -68,16 +70,17 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
           target="_blank"
           rel="noopener noreferrer"
           onClick={onClose}
-          className="font-serif text-4xl text-coastal tracking-tight animate-fade-up"
+          className="font-serif text-3xl text-oxblood tracking-tight animate-fade-up"
           style={{ animationDelay: `${siteConfig.nav.length * 60}ms` }}
         >
           Instagram
         </a>
       </nav>
 
-      <p className="px-8 pb-10 font-sans text-sm text-warm-gray">
-        {siteConfig.tagline}
-      </p>
+      <div className="flex items-center gap-3 px-8 pb-10">
+        <Scallop className="ornament-coral" size={20} />
+        <p className="font-script text-xl text-seafoam">by hand, always</p>
+      </div>
     </div>
   );
 }
@@ -87,7 +90,7 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    const onScroll = () => setScrolled(window.scrollY > 16);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -97,28 +100,34 @@ export function Header() {
     <>
       <header
         className={`fixed inset-x-0 top-0 z-40 transition-colors duration-300 ${
-          scrolled
-            ? "bg-ivory/95 backdrop-blur-[2px] border-b border-border"
-            : "bg-transparent"
+          scrolled ? "bg-ivory/97 border-b border-rule" : "bg-transparent"
         }`}
       >
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-10">
+        {!scrolled && (
+          <div className="hidden border-b border-dashed border-seafoam/25 bg-cream/70 md:block">
+            <p className="mx-auto max-w-7xl px-6 py-1.5 text-center font-script text-[0.95rem] text-seafoam lg:px-10">
+              handmade on Cape Cod · text Janene anytime · every weave is an act of love
+            </p>
+          </div>
+        )}
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-10">
           <Link
             href="/"
-            className="font-serif text-xl md:text-2xl tracking-[0.04em] text-navy transition-opacity hover:opacity-70"
+            className="flex items-center gap-2 font-serif text-lg md:text-xl tracking-[0.02em] text-navy transition-colors hover:text-oxblood"
           >
+            <TinyBasket className="text-seafoam" size={18} />
             {siteConfig.name}
           </Link>
 
           <nav
-            className="hidden md:flex items-center gap-10"
+            className="hidden md:flex items-center gap-7"
             aria-label="Primary"
           >
             {siteConfig.nav.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="font-sans text-[11px] uppercase tracking-[0.22em] text-charcoal-soft transition-colors hover:text-navy"
+                className="label-archival transition-colors hover:text-seafoam"
               >
                 {item.label}
               </Link>
@@ -127,18 +136,17 @@ export function Header() {
               href={siteConfig.social.instagram.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-sans text-[11px] uppercase tracking-[0.22em] text-coastal transition-colors hover:text-navy"
+              className="chip chip-coral !normal-case !tracking-normal !text-[0.72rem] !font-script !px-3"
             >
-              Instagram
+              Instagram ♡
             </a>
           </nav>
 
           <button
             type="button"
-            className="md:hidden font-sans text-[11px] uppercase tracking-[0.22em] text-charcoal-soft"
+            className="md:hidden label-archival"
             onClick={() => setMenuOpen(true)}
             aria-expanded={menuOpen}
-            aria-controls="mobile-menu"
             aria-label="Open menu"
           >
             Menu

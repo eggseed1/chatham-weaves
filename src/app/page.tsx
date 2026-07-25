@@ -6,6 +6,7 @@ import { StorySection } from "@/components/StorySection";
 import { CollectionSection } from "@/components/CollectionSection";
 import { CommissionCTA } from "@/components/CommissionCTA";
 import { InstagramGallery } from "@/components/InstagramGallery";
+import { DecorativeRule, SectionEyebrow, Wave } from "@/components/Accents";
 import { getFeaturedPieces } from "@/lib/pieces";
 import { instagramPosts } from "@/data/instagram";
 import { siteConfig } from "@/config/site";
@@ -27,41 +28,62 @@ export default function HomePage() {
         imageAlt="Chatham Weaves handmade Nantucket basket lifestyle"
       />
 
-      <section className="bg-ivory py-24 lg:py-32">
+      <section className="bg-ivory py-16 lg:py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
-          <div className="mb-14 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+          <DecorativeRule motif="wave" className="mb-10 max-w-sm" />
+          <div className="mb-10 flex flex-col gap-3 sm:mb-14 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <p className="font-sans text-[11px] uppercase tracking-[0.22em] text-warm-gray">
-                Selected Work
-              </p>
-              <h2 className="mt-3 font-serif text-3xl tracking-tight text-navy md:text-4xl">
+              <SectionEyebrow accent="seafoam">Fresh from the studio</SectionEyebrow>
+              <h2 className="mt-3 font-serif text-[1.85rem] tracking-tight text-navy md:text-[2.15rem]">
                 Featured Pieces
               </h2>
+              <p className="mt-2 font-script text-lg text-oxblood-faded">
+                little treasures, woven one by one
+              </p>
             </div>
             <Link
               href="/collection"
-              className="font-sans text-[11px] uppercase tracking-[0.22em] text-coastal transition-colors hover:text-navy"
+              className="label-archival transition-colors hover:text-seafoam"
             >
               View Full Collection →
             </Link>
           </div>
 
-          <div className="grid grid-cols-2 gap-x-4 gap-y-10 sm:gap-x-6 sm:gap-y-14 md:grid-cols-3">
+          <div className="grid grid-cols-2 gap-x-4 gap-y-12 sm:gap-x-7 sm:gap-y-16 md:grid-cols-3">
             {featured.map((piece, i) => (
               <PieceCard
                 key={piece.id}
                 piece={piece}
                 priority={i < 3}
                 featuredSpan={i === 0}
+                className={
+                  i === 1
+                    ? "md:translate-y-6"
+                    : i === 4
+                      ? "md:-translate-y-3"
+                      : ""
+                }
               />
             ))}
           </div>
         </div>
       </section>
 
+      <section className="border-y border-dashed border-seafoam/30 bg-cream/80 py-8">
+        <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-center gap-x-8 gap-y-3 px-6 text-center">
+          <p className="font-script text-xl text-seafoam">Cape Cod summers</p>
+          <Wave className="ornament-coral hidden sm:block" size={30} />
+          <p className="font-script text-xl text-oxblood-faded">
+            Nantucket tradition
+          </p>
+          <Wave className="ornament-sky hidden sm:block" size={30} />
+          <p className="font-script text-xl text-sky">made just for you</p>
+        </div>
+      </section>
+
       <StorySection
-        imageSrc="/images/lifestyle/workshop.jpg"
-        imageAlt="Chatham Weaves workshop and handwoven pieces"
+        imageSrc="/images/studio/studio-14.jpeg"
+        imageAlt="Nantucket lightship basket by Chatham Weaves among Cape Cod flowers"
       />
 
       <CollectionSection

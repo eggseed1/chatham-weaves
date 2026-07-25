@@ -50,46 +50,53 @@ const steps = [
 export default function CommissionsPage() {
   return (
     <div className="bg-ivory">
-      <section className="relative min-h-[60vh] overflow-hidden bg-navy">
-        <Image
-          src="/images/lifestyle/commissions.jpg"
-          alt="Custom commissioned Chatham Weaves bridal tote"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover opacity-80"
-        />
-        <div className="absolute inset-0 bg-navy/50" aria-hidden />
-        <div className="relative z-10 mx-auto flex min-h-[60vh] max-w-7xl flex-col justify-end px-6 pb-16 pt-32 lg:px-10">
-          <p className="font-sans text-[11px] uppercase tracking-[0.28em] text-linen/90">
-            Custom Work
-          </p>
-          <h1 className="mt-4 max-w-2xl font-serif text-4xl tracking-tight text-white md:text-6xl">
-            Commissions
-          </h1>
-          <p className="mt-5 max-w-lg font-sans text-base leading-relaxed text-linen/90">
-            Custom Nantucket baskets and jewelry made for your story —
-            weddings, gifts, memorials, and everyday heirlooms.
-          </p>
+      <section className="pt-28 pb-12 lg:pt-32 lg:pb-16">
+        <div className="mx-auto grid max-w-7xl items-end gap-10 px-6 lg:grid-cols-12 lg:px-10">
+          <div className="lg:col-span-5 lg:pb-4">
+            <p className="label-archival text-oxblood">Custom Work</p>
+            <hr className="rule-short mt-4" />
+            <h1 className="mt-5 font-serif text-[2.35rem] tracking-tight text-navy md:text-5xl">
+              Commissions
+            </h1>
+            <p className="mt-5 max-w-md font-serif text-[0.98rem] italic leading-relaxed text-charcoal-soft">
+              Custom Nantucket baskets and jewelry made for your story —
+              weddings, gifts, memorials, and everyday heirlooms.
+            </p>
+          </div>
+          <div className="lg:col-span-7">
+            <div className="photo-plate photo-natural rotate-[0.4deg]">
+              <div className="relative aspect-[16/11] overflow-hidden bg-linen">
+                <Image
+                  src="/images/lifestyle/commissions.jpg"
+                  alt="Custom commissioned Chatham Weaves bridal tote"
+                  fill
+                  priority
+                  sizes="(max-width: 1024px) 100vw, 58vw"
+                  className="object-cover"
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-32">
-        <div className="grid gap-16 lg:grid-cols-2 lg:gap-24">
+      <section className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
+        <div className="grid gap-16 lg:grid-cols-2 lg:gap-20">
           <div>
-            <h2 className="font-serif text-3xl tracking-tight text-navy">
+            <h2 className="font-serif text-[1.65rem] tracking-tight text-navy">
               What we create
             </h2>
-            <p className="mt-5 font-sans text-base leading-relaxed text-charcoal-soft">
+            <hr className="rule-short mt-4" />
+            <p className="mt-5 font-serif text-[0.98rem] leading-relaxed text-charcoal-soft">
               From bridal totes to memorial cuffs, each commission is shaped
               around the person who will carry or wear it. No two pieces are
               identical.
             </p>
-            <ul className="mt-10 space-y-4">
+            <ul className="mt-10 space-y-0">
               {categories.map((item) => (
                 <li
                   key={item}
-                  className="border-b border-border pb-4 font-sans text-sm text-charcoal"
+                  className="border-b border-rule py-3.5 font-serif text-sm text-navy"
                 >
                   {item}
                 </li>
@@ -98,18 +105,19 @@ export default function CommissionsPage() {
           </div>
 
           <div>
-            <h2 className="font-serif text-3xl tracking-tight text-navy">
+            <h2 className="font-serif text-[1.65rem] tracking-tight text-navy">
               The process
             </h2>
-            <ol className="mt-10 space-y-10">
+            <hr className="rule-short mt-4" />
+            <ol className="mt-10 space-y-9">
               {steps.map((step) => (
                 <li key={step.n} className="flex gap-5">
-                  <span className="font-sans text-[11px] uppercase tracking-[0.18em] text-coastal pt-1">
+                  <span className="label-archival pt-1 text-oxblood">
                     {step.n}
                   </span>
                   <div>
-                    <h3 className="font-serif text-xl text-navy">{step.title}</h3>
-                    <p className="mt-2 font-sans text-sm leading-relaxed text-charcoal-soft">
+                    <h3 className="font-serif text-lg text-navy">{step.title}</h3>
+                    <p className="mt-2 font-serif text-sm leading-relaxed text-charcoal-soft">
                       {step.body}
                     </p>
                   </div>
@@ -119,15 +127,19 @@ export default function CommissionsPage() {
           </div>
         </div>
 
-        <div className="mt-24 border-t border-border pt-16 text-center">
-          <h2 className="font-serif text-3xl tracking-tight text-navy md:text-4xl">
+        <div className="mt-20 border border-rule bg-cream/70 px-6 py-14 text-center md:px-12">
+          <p className="label-archival text-oxblood">Begin Here</p>
+          <h2 className="mt-4 font-serif text-[1.85rem] tracking-tight text-navy md:text-[2.15rem]">
             Start a Commission
           </h2>
-          <p className="mx-auto mt-5 max-w-md font-sans text-base leading-relaxed text-charcoal-soft">
+          <p className="mx-auto mt-5 max-w-md font-serif text-[0.98rem] leading-relaxed text-charcoal-soft">
             Message {siteConfig.social.instagram.handle} to begin. Share your
             ideas, timing, and any inspiration — we&apos;ll take it from there.
           </p>
-          <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+          <p className="mt-4 font-script text-xl text-oxblood-faded">
+            made for one person only
+          </p>
+          <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <InquireButton
               href={siteConfig.social.instagram.url}
               label="Start a Commission"
@@ -139,10 +151,6 @@ export default function CommissionsPage() {
               variant="secondary"
             />
           </div>
-          <p className="mt-8 font-sans text-xs text-warm-gray">
-            {/* Optional inquiry form can be added later */}
-            A simple inquiry form can be added here in a future update.
-          </p>
         </div>
       </section>
     </div>

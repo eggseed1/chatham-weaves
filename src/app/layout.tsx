@@ -1,21 +1,32 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Outfit } from "next/font/google";
+import { Caveat, Libre_Baskerville, Source_Serif_4 } from "next/font/google";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { siteConfig } from "@/config/site";
 import "./globals.css";
 
-const serif = Cormorant_Garamond({
+/* Small archival body serif */
+const serif = Libre_Baskerville({
   variable: "--font-serif",
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  style: ["normal", "italic"],
+  display: "swap",
+});
+
+/* Slightly more compact serif for labels / nav */
+const labelSerif = Source_Serif_4({
+  variable: "--font-sans",
   subsets: ["latin"],
   weight: ["400", "500", "600"],
   display: "swap",
 });
 
-const sans = Outfit({
-  variable: "--font-sans",
+/* Handwritten / archival notes — use sparingly */
+const script = Caveat({
+  variable: "--font-script",
   subsets: ["latin"],
-  weight: ["300", "400", "500"],
+  weight: ["400", "500"],
   display: "swap",
 });
 
@@ -58,8 +69,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${serif.variable} ${sans.variable} h-full`}>
-      <body className="min-h-full flex flex-col font-sans antialiased">
+    <html
+      lang="en"
+      className={`${serif.variable} ${labelSerif.variable} ${script.variable} h-full`}
+    >
+      <body className="min-h-full flex flex-col font-serif antialiased">
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

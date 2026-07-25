@@ -17,59 +17,60 @@ export function PieceDetail({ piece }: PieceDetailProps) {
     piece.status === "available" || piece.status === "made-to-order";
 
   return (
-    <div className="mx-auto grid max-w-7xl gap-12 px-6 py-16 lg:grid-cols-12 lg:gap-16 lg:px-10 lg:py-24">
+    <div className="mx-auto grid max-w-7xl gap-12 px-6 py-14 lg:grid-cols-12 lg:gap-14 lg:px-10 lg:py-20">
       <div className="lg:col-span-7">
         <PieceGallery images={piece.images} name={piece.name} />
       </div>
 
-      <div className="lg:col-span-5 lg:pt-4">
-        <p className="font-sans text-[11px] uppercase tracking-[0.22em] text-warm-gray">
+      <div className="lg:col-span-5 lg:pt-2 lg:translate-y-2">
+        <p className="label-archival flex items-center gap-2 text-seafoam">
           {CATEGORY_LABELS[piece.category]}
         </p>
-        <h1 className="mt-3 font-serif text-4xl tracking-tight text-navy md:text-5xl">
+        <hr className="rule-short mt-4" />
+        <h1 className="mt-5 font-serif text-[2.15rem] tracking-tight text-navy md:text-4xl">
           {piece.name}
         </h1>
 
-        <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2">
-          <span className="font-sans text-[11px] uppercase tracking-[0.18em] text-coastal">
+        <div className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-2">
+          <span
+            className={`chip ${
+              piece.status === "available" || piece.status === "made-to-order"
+                ? "chip-coral"
+                : ""
+            }`}
+          >
             {STATUS_LABELS[piece.status]}
           </span>
           {price && (
-            <span className="font-sans text-lg text-charcoal">{price}</span>
+            <span className="font-serif text-lg text-navy">{price}</span>
           )}
         </div>
 
-        <p className="mt-8 font-sans text-base leading-relaxed text-charcoal-soft">
+        <p className="mt-8 font-serif text-[0.98rem] leading-relaxed text-charcoal-soft">
           {piece.description}
         </p>
 
-        <dl className="mt-10 space-y-5 border-t border-border pt-8">
+        <dl className="mt-10 space-y-5 border-t border-rule pt-8">
           {piece.materials && (
             <div>
-              <dt className="font-sans text-[11px] uppercase tracking-[0.18em] text-warm-gray">
-                Materials
-              </dt>
-              <dd className="mt-1.5 font-sans text-sm leading-relaxed text-charcoal">
+              <dt className="label-archival !text-[0.62rem]">Materials</dt>
+              <dd className="mt-1.5 font-serif text-sm leading-relaxed text-navy">
                 {piece.materials}
               </dd>
             </div>
           )}
           {piece.dimensions && (
             <div>
-              <dt className="font-sans text-[11px] uppercase tracking-[0.18em] text-warm-gray">
-                Dimensions
-              </dt>
-              <dd className="mt-1.5 font-sans text-sm leading-relaxed text-charcoal">
+              <dt className="label-archival !text-[0.62rem]">Dimensions</dt>
+              <dd className="mt-1.5 font-serif text-sm leading-relaxed text-navy">
                 {piece.dimensions}
               </dd>
             </div>
           )}
           {piece.details && (
             <div>
-              <dt className="font-sans text-[11px] uppercase tracking-[0.18em] text-warm-gray">
-                Craftsmanship
-              </dt>
-              <dd className="mt-1.5 font-sans text-sm leading-relaxed text-charcoal">
+              <dt className="label-archival !text-[0.62rem]">Craftsmanship</dt>
+              <dd className="mt-1.5 font-serif text-sm leading-relaxed text-navy">
                 {piece.details}
               </dd>
             </div>
@@ -79,25 +80,27 @@ export function PieceDetail({ piece }: PieceDetailProps) {
         <div className="mt-12 space-y-4">
           {isSold ? (
             <>
-              <p className="font-sans text-sm leading-relaxed text-charcoal-soft">
+              <p className="font-serif text-sm leading-relaxed text-charcoal-soft">
                 Interested in something similar? We&apos;d love to weave a
                 custom piece inspired by this one.
               </p>
-              <InquireButton
-                href="/commissions"
-                label="Ask About a Custom Piece"
-                variant="primary"
-              />
-              <InquireButton
-                href={siteConfig.social.instagram.url}
-                label="Message on Instagram"
-                variant="secondary"
-                external
-              />
+              <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                <InquireButton
+                  href="/commissions"
+                  label="Ask About a Custom Piece"
+                  variant="primary"
+                />
+                <InquireButton
+                  href={siteConfig.social.instagram.url}
+                  label="Message on Instagram"
+                  variant="secondary"
+                  external
+                />
+              </div>
             </>
           ) : (
             <>
-              <p className="font-sans text-sm leading-relaxed text-charcoal-soft">
+              <p className="font-serif text-sm leading-relaxed text-charcoal-soft">
                 Interested in this piece? Send us a message on Instagram for
                 availability, purchasing, or questions.
               </p>
@@ -109,7 +112,7 @@ export function PieceDetail({ piece }: PieceDetailProps) {
                 variant="primary"
                 external
               />
-              <p className="font-sans text-xs text-warm-gray">
+              <p className="font-serif text-xs italic text-warm-gray">
                 Messaging does not reserve or purchase the piece — we&apos;ll
                 confirm availability personally.
               </p>
@@ -123,7 +126,7 @@ export function PieceDetail({ piece }: PieceDetailProps) {
               href={piece.instagramUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-sans text-[11px] uppercase tracking-[0.18em] text-coastal transition-colors hover:text-navy"
+              className="label-archival text-oxblood transition-colors hover:text-navy"
             >
               View original post →
             </a>
@@ -133,7 +136,7 @@ export function PieceDetail({ piece }: PieceDetailProps) {
         <p className="mt-10">
           <Link
             href="/collection"
-            className="font-sans text-[11px] uppercase tracking-[0.18em] text-warm-gray transition-colors hover:text-navy"
+            className="label-archival transition-colors hover:text-oxblood"
           >
             ← Back to Collection
           </Link>

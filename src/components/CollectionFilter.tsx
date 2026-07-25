@@ -24,7 +24,7 @@ export function CollectionFilter({
   return (
     <div>
       <div
-        className="mb-12 flex flex-wrap gap-x-6 gap-y-3 border-b border-border pb-6"
+        className="mb-12 flex flex-wrap gap-x-6 gap-y-3 border-b border-rule pb-5"
         role="tablist"
         aria-label="Filter collection"
       >
@@ -37,10 +37,10 @@ export function CollectionFilter({
               role="tab"
               aria-selected={active}
               onClick={() => setFilter(opt.value)}
-              className={`font-sans text-[11px] uppercase tracking-[0.2em] transition-colors ${
+              className={`label-archival transition-colors ${
                 active
-                  ? "text-navy"
-                  : "text-warm-gray hover:text-charcoal"
+                  ? "text-oxblood"
+                  : "hover:text-navy"
               }`}
             >
               {opt.label}
@@ -50,7 +50,7 @@ export function CollectionFilter({
       </div>
 
       {filtered.length === 0 ? (
-        <p className="font-sans text-sm text-warm-gray">
+        <p className="font-serif text-sm italic text-warm-gray">
           No pieces in this category yet.
         </p>
       ) : (

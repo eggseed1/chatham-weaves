@@ -1,58 +1,61 @@
 import Image from "next/image";
 import { siteConfig } from "@/config/site";
 import type { InstagramPost } from "@/data/instagram";
+import { DecorativeRule, SectionEyebrow } from "@/components/Accents";
 
 interface InstagramGalleryProps {
   posts: InstagramPost[];
 }
 
-/**
- * Manually curated Instagram gallery.
- * Swap `posts` for an automated feed later without changing this layout.
- */
 export function InstagramGallery({ posts }: InstagramGalleryProps) {
   return (
-    <section className="bg-ivory py-24 lg:py-32">
+    <section className="bg-ivory py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <div className="mb-12 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+        <div className="mb-10 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <p className="font-sans text-[11px] uppercase tracking-[0.22em] text-warm-gray">
+            <SectionEyebrow accent="coral">
               {siteConfig.social.instagram.handle}
-            </p>
-            <h2 className="mt-3 font-serif text-3xl tracking-tight text-navy md:text-4xl">
+            </SectionEyebrow>
+            <h2 className="mt-3 font-serif text-[1.85rem] tracking-tight text-navy md:text-[2.15rem]">
               Follow Along on Instagram
             </h2>
+            <p className="mt-2 font-script text-lg text-seafoam">
+              sunny days, sweet stacks & studio moments
+            </p>
           </div>
           <a
             href={siteConfig.social.instagram.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="font-sans text-[11px] uppercase tracking-[0.22em] text-coastal transition-colors hover:text-navy"
+            className="chip chip-coral !normal-case !tracking-normal !text-[0.8rem] !font-script"
           >
-            Visit Profile →
+            Visit the shop roll →
           </a>
         </div>
 
-        <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 md:grid-cols-4 md:gap-3">
+        <DecorativeRule motif="wave" className="mb-8 max-w-xs" />
+
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 md:gap-4">
           {posts.slice(0, 8).map((post, i) => (
             <a
               key={post.id}
               href={post.href}
               target="_blank"
               rel="noopener noreferrer"
-              className={`group relative block overflow-hidden bg-linen ${
-                i === 0 ? "aspect-square sm:col-span-1" : "aspect-square"
-              }`}
+              className={`group relative block overflow-hidden rounded-sm border border-border bg-linen shadow-[2px_3px_0_rgba(127,168,160,0.12)] ${
+                i === 1 || i === 5 ? "md:translate-y-3" : ""
+              } ${i === 3 ? "md:-translate-y-2" : ""}`}
             >
-              <Image
-                src={post.src}
-                alt={post.alt}
-                fill
-                sizes="(max-width: 640px) 50vw, 25vw"
-                className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
-                loading="lazy"
-              />
-              <span className="absolute inset-0 bg-navy/0 transition-colors group-hover:bg-navy/15" />
+              <div className="relative aspect-square photo-natural">
+                <Image
+                  src={post.src}
+                  alt={post.alt}
+                  fill
+                  sizes="(max-width: 640px) 50vw, 25vw"
+                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                  loading="lazy"
+                />
+              </div>
             </a>
           ))}
         </div>

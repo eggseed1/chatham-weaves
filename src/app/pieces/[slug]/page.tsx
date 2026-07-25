@@ -43,12 +43,13 @@ export default async function PiecePage({ params }: PiecePageProps) {
       <PieceDetail piece={piece} />
 
       {related.length > 0 && (
-        <section className="border-t border-border bg-cream py-20 lg:py-28">
+        <section className="border-t border-rule bg-cream py-16 lg:py-24">
           <div className="mx-auto max-w-7xl px-6 lg:px-10">
-            <h2 className="mb-10 font-serif text-2xl tracking-tight text-navy md:text-3xl">
+            <p className="label-archival text-oxblood">Continue Looking</p>
+            <h2 className="mt-3 mb-10 font-serif text-[1.65rem] tracking-tight text-navy md:text-[1.85rem]">
               Related Pieces
             </h2>
-            <div className="grid grid-cols-2 gap-x-4 gap-y-10 md:grid-cols-3 md:gap-x-6">
+            <div className="grid grid-cols-2 gap-x-4 gap-y-10 md:grid-cols-3 md:gap-x-7">
               {related.map((p) => (
                 <PieceCard key={p.id} piece={p} />
               ))}

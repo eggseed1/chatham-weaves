@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { CATEGORY_LABELS, type PieceCategory } from "@/types/piece";
+import { SectionEyebrow, TinyBasket } from "@/components/Accents";
 
 interface CollectionCategory {
   category: PieceCategory;
@@ -15,36 +16,48 @@ interface CollectionSectionProps {
 
 export function CollectionSection({ categories }: CollectionSectionProps) {
   return (
-    <section className="bg-cream py-24 lg:py-32">
+    <section className="bg-cream py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <div className="mb-14 max-w-xl">
-          <p className="font-sans text-[11px] uppercase tracking-[0.22em] text-warm-gray">
-            Browse by Category
-          </p>
-          <h2 className="mt-3 font-serif text-3xl tracking-tight text-navy md:text-4xl">
+        <div className="mb-12 flex flex-col gap-3 md:mb-16 md:max-w-md">
+          <SectionEyebrow accent="sky">Peek inside the shop</SectionEyebrow>
+          <h2 className="font-serif text-[1.85rem] tracking-tight text-navy md:text-[2.15rem]">
             The Collection
           </h2>
+          <p className="font-script text-lg text-oxblood-faded">
+            baskets, sparkle & one-of-a-kinds
+          </p>
         </div>
 
-        <div className="grid gap-5 sm:grid-cols-2 lg:gap-6">
-          {categories.map((cat) => (
+        <div className="grid gap-8 sm:grid-cols-2 lg:gap-x-10 lg:gap-y-14">
+          {categories.map((cat, i) => (
             <Link
               key={cat.category}
               href={cat.href}
-              className="group relative block aspect-[16/10] overflow-hidden bg-linen"
+              className={`group block ${
+                i % 2 === 1 ? "sm:translate-y-8" : ""
+              } ${i === 2 ? "sm:-translate-y-2" : ""}`}
             >
-              <Image
-                src={cat.imageSrc}
-                alt={cat.imageAlt}
-                fill
-                sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
-              />
-              <div className="absolute inset-0 bg-navy/30 transition-colors group-hover:bg-navy/40" />
-              <div className="absolute inset-0 flex items-end p-6 md:p-8">
-                <h3 className="font-serif text-2xl text-white tracking-tight md:text-3xl">
+              <div
+                className={`photo-plate photo-natural ${
+                  i % 2 === 0 ? "rotate-[-0.4deg]" : "rotate-[0.45deg]"
+                }`}
+              >
+                <div className="relative aspect-[5/4] overflow-hidden bg-linen">
+                  <Image
+                    src={cat.imageSrc}
+                    alt={cat.imageAlt}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                  />
+                </div>
+              </div>
+              <div className="mt-4 flex items-baseline justify-between gap-3 px-1">
+                <h3 className="flex items-center gap-2 font-serif text-xl text-navy transition-colors group-hover:text-seafoam">
+                  <TinyBasket size={16} className="text-seafoam opacity-70" />
                   {CATEGORY_LABELS[cat.category]}
                 </h3>
+                <span className="chip !py-1">View</span>
               </div>
             </Link>
           ))}
