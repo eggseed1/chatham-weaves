@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+:root {
+  --ivory: #f7f3ec;
+  --cream: #f3eee4;
+  --linen: #e8e0d4;
+  --sand: #d4c8b6;
+  --navy: #1e2a3a;
+  --coastal: #5b7388;
+  --coastal-soft: #7a8fa0;
+  --warm-gray: #8a857c;
+  --charcoal: #2c2a26;
+  --charcoal-soft: #4a4640;
+  --white: #fffcf7;
+  --border: rgba(44, 42, 38, 0.12);
+  --focus: #5b7388;
+}
+
+@theme inline {
+  --color-ivory: var(--ivory);
+  --color-cream: var(--cream);
+  --color-linen: var(--linen);
+  --color-sand: var(--sand);
+  --color-navy: var(--navy);
+  --color-coastal: var(--coastal);
+  --color-coastal-soft: var(--coastal-soft);
+  --color-warm-gray: var(--warm-gray);
+  --color-charcoal: var(--charcoal);
+  --color-charcoal-soft: var(--charcoal-soft);
+  --color-white: var(--white);
+  --color-border: var(--border);
+  --font-serif: var(--font-serif);
+  --font-sans: var(--font-sans);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--ivory);
+  color: var(--charcoal);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--coastal) 28%, white);
+  color: var(--navy);
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+}
+
+.font-serif {
+  font-family: var(--font-serif), ui-serif, Georgia, serif;
+}
+
+.font-sans {
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Subtle reveal animations — restrained */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.8s ease-out both;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.7s ease-out both;
+}
+
+.delay-100 {
+  animation-delay: 100ms;
+}
+.delay-200 {
+  animation-delay: 200ms;
+}
+.delay-300 {
+  animation-delay: 300ms;
+}
+.delay-400 {
+  animation-delay: 400ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .animate-fade-up,
+  .animate-fade-in {
+    animation: none !important;
+  }
+
+  .group:hover .group-hover\:scale-105 {
+    transform: none !important;
+  }
+}

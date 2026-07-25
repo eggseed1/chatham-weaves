@@ -1,0 +1,382 @@
+{
+  "pieces": [
+    {
+      "idx": 11,
+      "slug": "summer-bucket-bag",
+      "name": "Summer Bucket Bag",
+      "category": "baskets",
+      "status": "sold",
+      "featured": true,
+      "price": null,
+      "caption": "The perfect summer bucket bag does exist \ud83d\udedf\ud83d\ude07",
+      "instagramUrl": "https://www.instagram.com/p/DaGvQ37vHtD/",
+      "images": [
+        "/images/pieces/summer-bucket-bag-1.jpg"
+      ],
+      "alt": "Photo by Chatham Weaves by Janene Marie on June 27, 2026. May be an image of flower arrangement, grocery bag, bucket, basket, hamper, napkin, houseboat and text.",
+      "location": "Chatham, Cape Cod, MA"
+    },
+    {
+      "idx": 13,
+      "slug": "crossbody-basket",
+      "name": "Crossbody Basket",
+      "category": "baskets",
+      "status": "sold",
+      "featured": true,
+      "price": null,
+      "caption": "Stunning birthday girl with her new Chatham Weaves cross body \ud83e\udd42#nantucketbasket",
+      "instagramUrl": "https://www.instagram.com/p/DaJYeN1vJ4P/",
+      "images": [
+        "/images/pieces/crossbody-basket-1.jpg"
+      ],
+      "alt": "Photo by Chatham Weaves by Janene Marie on June 28, 2026. May be an image of sundress and text.",
+      "location": "White Elephant"
+    },
+    {
+      "idx": 15,
+      "slug": "kitchen-staple-basket",
+      "name": "Kitchen Staple Basket",
+      "category": "baskets",
+      "status": "commission-example",
+      "featured": false,
+      "price": null,
+      "caption": "A perfect kitchen staple woven for my wonderful client and friend @capecodbachweekend \ud83d\udc33\ud83d\udc0b\ud83e\udecd",
+      "instagramUrl": "https://www.instagram.com/p/DaWWxK3OF1z/",
+      "images": [
+        "/images/pieces/kitchen-staple-basket-1.jpg"
+      ],
+      "alt": "Photo by Chatham Weaves by Janene Marie on July 03, 2026. May be an image of paper towel, flower arrangement, indoors and text.",
+      "location": "Chatham, Cape Cod, MA"
+    },
+    {
+      "idx": 17,
+      "slug": "bridal-cherry-ivory-tote",
+      "name": "Bridal Cherry & Ivory Tote",
+      "category": "baskets",
+      "status": "commission-example",
+      "featured": true,
+      "price": null,
+      "caption": "CALLING ALL BRIDES\ud83d\udc85This girl is going to the chapel \ud83d\udc92soon. Custom 10\u201d tote in cherry ebony and ivory\ud83e\ude75\ud83d\udc8d\ud83e\udd42",
+      "instagramUrl": "https://www.instagram.com/p/DYj0lgGNkU-/",
+      "images": [
+        "/images/pieces/bridal-cherry-ivory-tote-1.jpg"
+      ],
+      "alt": "Photo by Chatham Weaves by Janene Marie on May 20, 2026. May be an image of \u200epurse, basket and \u200etext that says '\u200e\u1295 \u0627 @chatham_ weaves\u200e'\u200e\u200e.",
+      "location": "Franklin Lakes, New Jersey"
+    },
+    {
+      "idx": 29,
+      "slug": "walnut-mammoth-bucket",
+      "name": "Walnut & Mammoth Bucket Bag",
+      "category": "baskets",
+      "status": "made-to-order",
+      "featured": true,
+      "price": null,
+      "caption": "Bucket bag in walnut and Mamouth #chathamweaves",
+      "instagramUrl": "https://www.instagram.com/p/DY2c92fOjpS/",
+      "images": [
+        "/images/pieces/walnut-mammoth-bucket-1.jpg"
+      ],
+      "alt": "Photo by Chatham Weaves by Janene Marie on May 27, 2026. May be an image of basket, hamper and text that says '@chatham_weaves weaves @chatham'.",
+      "location": ""
+    },
+    {
+      "idx": 39,
+      "slug": "martha-lawrence-kidney-tote",
+      "name": "Martha Lawrence Kidney Tote",
+      "category": "baskets",
+      "status": "sold",
+      "featured": true,
+      "price": null,
+      "caption": "New name plate alert for this stunning Martha Lawrence kidney tote #chathamweaves #ebony #ivory \ud83d\udc33\ud83e\udd0d\u2693\ufe0f",
+      "instagramUrl": "https://www.instagram.com/p/DXMeyHSDo5N/",
+      "images": [
+        "/images/pieces/martha-lawrence-kidney-tote-1.jpg"
+      ],
+      "alt": "Photo by Chatham Weaves by Janene Marie on April 16, 2026.",
+      "location": "Chatham, Cape Cod, MA"
+    },
+    {
+      "idx": 38,
+      "slug": "hoppy-cherrywood-basket",
+      "name": "Cherrywood Hoppy Basket",
+      "category": "baskets",
+      "status": "sold",
+      "featured": false,
+      "price": null,
+      "caption": "When you finally find a basket that's 'hoppy' #cherrywood #chathamweaves #nantucketbasket #spring \ud83c\udf7b\ud83e\udd9e\ud83c\udfa3",
+      "instagramUrl": "https://www.instagram.com/p/DXr8HlGjyPM/",
+      "images": [
+        "/images/pieces/hoppy-cherrywood-basket-1.jpg"
+      ],
+      "alt": "Photo by Chatham Weaves by Janene Marie on April 28, 2026. May be an image of bucket, basket and bird feeder.",
+      "location": "Chatham, Cape Cod, MA"
+    },
+    {
+      "idx": 9,
+      "slug": "custom-ivory-birthday",
+      "name": "Custom Ivory Birthday Basket",
+      "category": "one-of-a-kind",
+      "status": "commission-example",
+      "featured": false,
+      "price": null,
+      "caption": "Happy birthday \ud83c\udf3a#custom #ivory #chathamweaves",
+      "instagramUrl": "https://www.instagram.com/p/Da5hjySuVPG/",
+      "images": [
+        "/images/pieces/custom-ivory-birthday-1.jpg"
+      ],
+      "alt": "Photo by Chatham Weaves by Janene Marie on July 17, 2026. May be an image of jewelry, brass, bangle and text that says 'NeediepointS Shop Headegoin Sstervile The W Needlepoint Needlepoist Shop \u12a0\u1274 @chatham weaves'.",
+      "location": "Harwich Port / Cape Cod"
+    },
+    {
+      "idx": 23,
+      "slug": "cherry-coaster",
+      "name": "Cherry Coaster",
+      "category": "accessories",
+      "status": "commission-example",
+      "featured": false,
+      "price": null,
+      "caption": "Pleasant Bay Community Boating 2026 Gala donation \u26f5\ufe0f#cherry #coaster #nantucketbasket",
+      "instagramUrl": "https://www.instagram.com/p/DZD9WlEOIdL/",
+      "images": [
+        "/images/pieces/cherry-coaster-1.jpg"
+      ],
+      "alt": "Photo by Chatham Weaves by Janene Marie on June 01, 2026. May be an image of kitchenware and text.",
+      "location": "Pleasant Bay Community Boating"
+    },
+    {
+      "idx": 18,
+      "slug": "nantucket-cuff-stack",
+      "name": "Nantucket Cuff Stack",
+      "category": "jewelry",
+      "status": "commission-example",
+      "featured": true,
+      "price": null,
+      "caption": "A beautiful stack including a Nantucket cuff for my dear friend in memory of her beloved mother #family #\ud83c\uddec\ud83c\uddf7 #wbc #friendsforever #prettydonna \ud83d\udc99\ud83d\udc1a\ud83e\ude75",
+      "instagramUrl": "https://www.instagram.com/p/DZgMi-aPzqJ/",
+      "images": [
+        "/images/pieces/nantucket-cuff-stack-1.jpg"
+      ],
+      "alt": "Photo by Chatham Weaves by Janene Marie on June 12, 2026. May be an image of jewelry, bangle and text.",
+      "location": "Wychmere Beach Club"
+    },
+    {
+      "idx": 19,
+      "slug": "max-memorial-cuff",
+      "name": "Max Memorial Cuff",
+      "category": "jewelry",
+      "status": "commission-example",
+      "featured": false,
+      "price": null,
+      "caption": "I was honored to create this special Nantucket cuff for a very special friend. Max was a cherished paw friend whose love, loyalty, and companionship will always be remembered. It was a privilege to make this piece in his honor. RIP MAX\ud83d\udc3e\ud83d\udc3e\ud83d\udc3e #hearts #ivory #chathamweaves #joop #heaven\ud83d\udc3e",
+      "instagramUrl": "https://www.instagram.com/p/DZtLSwtDtsi/",
+      "images": [
+        "/images/pieces/max-memorial-cuff-1.jpg",
+        "/images/pieces/max-memorial-cuff-2.jpg",
+        "/images/pieces/max-memorial-cuff-3.jpg",
+        "/images/pieces/max-memorial-cuff-4.jpg"
+      ],
+      "alt": "Photo by Chatham Weaves by Janene Marie on June 17, 2026.",
+      "location": "Plymouth, Massachusetts"
+    },
+    {
+      "idx": 22,
+      "slug": "shell-end-cap-bracelet",
+      "name": "Shell End Cap Bracelet",
+      "category": "jewelry",
+      "status": "made-to-order",
+      "featured": true,
+      "price": null,
+      "caption": "Another custom Chatham Weaves bracelet for my beautiful client! Shell end caps have been popular this summer \ud83d\udc1a \u2693\ufe0f DM to order!",
+      "instagramUrl": "https://www.instagram.com/p/DaWbIRWu-sg/",
+      "images": [
+        "/images/pieces/shell-end-cap-bracelet-1.jpg"
+      ],
+      "alt": "Photo by Chatham Weaves by Janene Marie on July 03, 2026. May be an image of text.",
+      "location": "Wychmere Beach Club"
+    },
+    {
+      "idx": 26,
+      "slug": "ebony-pink-cuff",
+      "name": "Ebony Pink Cuff",
+      "category": "jewelry",
+      "status": "sold",
+      "featured": false,
+      "price": null,
+      "caption": "Pretty in \ud83e\ude77\ud83e\ude77\ud83e\ude77\ud83e\ude77#ebony #cuff #1/4\u201d #chatham_weaves",
+      "instagramUrl": "https://www.instagram.com/p/DZGSuC7D-ev/",
+      "images": [
+        "/images/pieces/ebony-pink-cuff-1.jpg",
+        "/images/pieces/ebony-pink-cuff-2.jpg",
+        "/images/pieces/ebony-pink-cuff-3.jpg",
+        "/images/pieces/ebony-pink-cuff-4.jpg"
+      ],
+      "alt": "Photo by Chatham Weaves by Janene Marie on June 02, 2026.",
+      "location": "Brewster, Massachusetts"
+    },
+    {
+      "idx": 32,
+      "slug": "bleached-weave-bracelets",
+      "name": "Bleached Weave Bracelets",
+      "category": "jewelry",
+      "status": "available",
+      "featured": false,
+      "price": null,
+      "caption": "Add some coastal charm with Nantucket bracelets #ivory #bleachedweave #florida #chathamweaves \ud83e\udd0d\ud83d\udc9a\ud83c\udf34",
+      "instagramUrl": "https://www.instagram.com/p/DXFyPqujnIr/",
+      "images": [
+        "/images/pieces/bleached-weave-bracelets-1.jpg"
+      ],
+      "alt": "Photo by Chatham Weaves by Janene Marie on April 13, 2026.",
+      "location": "South Hutchinson Island, Florida"
+    },
+    {
+      "idx": 21,
+      "slug": "nantucket-cuffs-falmouth",
+      "name": "Nantucket Cuffs",
+      "category": "jewelry",
+      "status": "sold",
+      "featured": false,
+      "price": null,
+      "caption": "\u201cFriends forever, customers always. Love you ladies xxoo \ud83d\udc96\u201d #chathamweaves #falmouth #nantucketcuffs",
+      "instagramUrl": "https://www.instagram.com/p/DYVVCOxPORC/",
+      "images": [
+        "/images/pieces/nantucket-cuffs-falmouth-1.jpg"
+      ],
+      "alt": "Photo by Chatham Weaves by Janene Marie on May 14, 2026. May be an image of wristband and bandage.",
+      "location": "Falmouth Cape Cod"
+    },
+    {
+      "idx": 12,
+      "slug": "summer-stack",
+      "name": "Summer Stack",
+      "category": "jewelry",
+      "status": "available",
+      "featured": false,
+      "price": null,
+      "caption": "Summer stack \ud83d\udc1a\ud83d\udc33\ud83c\udf0a\ud83e\udd42",
+      "instagramUrl": "https://www.instagram.com/p/DaGu61lviyh/",
+      "images": [
+        "/images/pieces/summer-stack-1.jpg"
+      ],
+      "alt": "@ralphlauren",
+      "location": "Wychmere Beach Club"
+    },
+    {
+      "idx": 2,
+      "slug": "mermaid-weave",
+      "name": "Mermaid Weave",
+      "category": "one-of-a-kind",
+      "status": "available",
+      "featured": true,
+      "price": null,
+      "caption": "\ud83e\udddc\ud83e\udddc\ud83c\udffb\u200d\u2640\ufe0f\ud83e\udddc\u200d\u2642\ufe0f #chathamweaves",
+      "instagramUrl": "https://www.instagram.com/p/DbK_pJ3soDC/",
+      "images": [
+        "/images/pieces/mermaid-weave-1.jpg"
+      ],
+      "alt": "Photo by Chatham Weaves by Janene Marie on July 24, 2026. May be an image of basket, bird feeder and text.",
+      "location": "Chatham, Cape Cod, MA"
+    },
+    {
+      "idx": 40,
+      "slug": "cherry-hydrangea",
+      "name": "Cherry Hydrangea Weave",
+      "category": "one-of-a-kind",
+      "status": "sold",
+      "featured": false,
+      "price": null,
+      "caption": "Spring in bloom #cherry #hydrangealove #chathamweaves as",
+      "instagramUrl": "https://www.instagram.com/p/DW-WpMXjlAM/",
+      "images": [
+        "/images/pieces/cherry-hydrangea-1.jpg"
+      ],
+      "alt": "Photo by Chatham Weaves by Janene Marie on April 10, 2026.",
+      "location": "Chatham, Cape Cod, MA"
+    }
+  ],
+  "instagram": [
+    {
+      "src": "/images/instagram/ig-01.jpg",
+      "alt": "Photo by Chatham Weaves by Janene Marie on July 19, 2026. May be an image of text that says '@chatham @chatham_weaves we",
+      "href": "https://www.instagram.com/p/Da-Ner-sHpO/"
+    },
+    {
+      "src": "/images/instagram/ig-02.jpg",
+      "alt": "Photo by Chatham Weaves by Janene Marie on July 21, 2026. May be an image of text.",
+      "href": "https://www.instagram.com/p/DbEKoC-sssT/"
+    },
+    {
+      "src": "/images/instagram/ig-03.jpg",
+      "alt": "Photo by Chatham Weaves by Janene Marie on July 24, 2026. May be an image of basket, bird feeder and text.",
+      "href": "https://www.instagram.com/p/DbK_pJ3soDC/"
+    },
+    {
+      "src": "/images/instagram/ig-04.jpg",
+      "alt": "Photo by Chatham Weaves by Janene Marie on July 16, 2026. May be an image of \u200ewater bottle, tablecloth, mountain-laurel ",
+      "href": "https://www.instagram.com/p/Da34Wz1uhXk/"
+    },
+    {
+      "src": "/images/instagram/ig-05.jpg",
+      "alt": "Photo by Chatham Weaves by Janene Marie on July 24, 2026. May be an image of one or more people, ocean and text that say",
+      "href": "https://www.instagram.com/p/DbLBssmstIt/"
+    },
+    {
+      "src": "/images/instagram/ig-06.jpg",
+      "alt": "Photo by Chatham Weaves by Janene Marie on June 20, 2026. May be an image of orca, dolphin and text that says '@chatham ",
+      "href": "https://www.instagram.com/p/DZ1APLkOPf3/"
+    },
+    {
+      "src": "/images/instagram/ig-07.jpg",
+      "alt": "Photo by Chatham Weaves by Janene Marie on June 21, 2026. May be an image of basket, oyster and text.",
+      "href": "https://www.instagram.com/p/DZ2VQ2NOvBG/"
+    },
+    {
+      "src": "/images/instagram/ig-08.jpg",
+      "alt": "Photo by Chatham Weaves by Janene Marie on July 02, 2026. May be an image of jewelry, napkin ring, bangle and text.",
+      "href": "https://www.instagram.com/p/DaTBO0huSw7/"
+    },
+    {
+      "src": "/images/instagram/ig-09.jpg",
+      "alt": "Photo by Chatham Weaves by Janene Marie on July 02, 2026.",
+      "href": "https://www.instagram.com/p/DaTAiX0DoLd/"
+    },
+    {
+      "src": "/images/instagram/ig-10.jpg",
+      "alt": "Photo by Chatham Weaves by Janene Marie on July 19, 2026. May be an image of text.",
+      "href": "https://www.instagram.com/p/Da-kxwGuFfE/"
+    },
+    {
+      "src": "/images/instagram/ig-11.jpg",
+      "alt": "Photo by Chatham Weaves by Janene Marie on June 10, 2026. May be an image of jewelry, napkin ring, sink and text.",
+      "href": "https://www.instagram.com/p/DZZvHjBM6wD/"
+    },
+    {
+      "src": "/images/instagram/ig-12.jpg",
+      "alt": "Photo by Chatham Weaves by Janene Marie on July 07, 2026. May be an image of napkin ring, thimble, lamp shade, salt shak",
+      "href": "https://www.instagram.com/p/DafcL0SOBrN/"
+    },
+    {
+      "src": "/images/instagram/ig-13.jpg",
+      "alt": "Photo by Chatham Weaves by Janene Marie on May 05, 2026. May be an image of bangle.",
+      "href": "https://www.instagram.com/p/DX9TGT1u0Uy/"
+    },
+    {
+      "src": "/images/instagram/ig-14.jpg",
+      "alt": "Photo by Chatham Weaves by Janene Marie on April 16, 2026.",
+      "href": "https://www.instagram.com/p/DXMS2lcjpDD/"
+    },
+    {
+      "src": "/images/instagram/ig-15.jpg",
+      "alt": "Photo by Chatham Weaves by Janene Marie on June 21, 2026.",
+      "href": "https://www.instagram.com/p/DZ2hcq3jpg6/"
+    }
+  ],
+  "lifestyle": {
+    "hero": "/images/lifestyle/hero.jpg",
+    "workshop": "/images/lifestyle/workshop.jpg",
+    "about": "/images/lifestyle/about.jpg",
+    "commissions": "/images/lifestyle/commissions.jpg",
+    "story": "/images/lifestyle/story.jpg"
+  }
+}
