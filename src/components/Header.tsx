@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { siteConfig } from "@/config/site";
 
@@ -83,6 +84,7 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
 }
 
 export function Header() {
+  const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -93,19 +95,26 @@ export function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Home hero is a dark full-bleed image — invert nav for contrast until scroll
+  const onDarkHero = pathname === "/" && !scrolled;
+
   return (
     <>
       <header
         className={`fixed inset-x-0 top-0 z-40 transition-colors duration-300 ${
           scrolled
             ? "bg-ivory/95 backdrop-blur-[2px] border-b border-border"
-            : "bg-transparent"
+            : onDarkHero
+              ? "bg-navy/45"
+              : "bg-transparent"
         }`}
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-10">
           <Link
             href="/"
-            className="font-serif text-xl md:text-2xl tracking-[0.04em] text-navy transition-opacity hover:opacity-70"
+            className={`font-serif text-xl md:text-2xl tracking-[0.04em] transition-opacity hover:opacity-70 ${
+              onDarkHero ? "text-white" : "text-navy"
+            }`}
           >
             {siteConfig.name}
           </Link>
@@ -118,7 +127,11 @@ export function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="font-sans text-[11px] uppercase tracking-[0.22em] text-charcoal-soft transition-colors hover:text-navy"
+                className={`font-sans text-[11px] uppercase tracking-[0.22em] transition-colors ${
+                  onDarkHero
+                    ? "text-white/85 hover:text-white"
+                    : "text-charcoal-soft hover:text-navy"
+                }`}
               >
                 {item.label}
               </Link>
@@ -127,7 +140,11 @@ export function Header() {
               href={siteConfig.social.instagram.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-sans text-[11px] uppercase tracking-[0.22em] text-coastal transition-colors hover:text-navy"
+              className={`font-sans text-[11px] uppercase tracking-[0.22em] transition-colors ${
+                onDarkHero
+                  ? "text-linen hover:text-white"
+                  : "text-coastal hover:text-navy"
+              }`}
             >
               Instagram
             </a>
@@ -135,7 +152,9 @@ export function Header() {
 
           <button
             type="button"
-            className="md:hidden font-sans text-[11px] uppercase tracking-[0.22em] text-charcoal-soft"
+            className={`md:hidden font-sans text-[11px] uppercase tracking-[0.22em] ${
+              onDarkHero ? "text-white" : "text-charcoal-soft"
+            }`}
             onClick={() => setMenuOpen(true)}
             aria-expanded={menuOpen}
             aria-controls="mobile-menu"
