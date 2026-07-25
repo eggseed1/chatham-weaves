@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { siteConfig } from "@/config/site";
+import { Logo } from "@/components/Logo";
 
 interface MobileMenuProps {
   open: boolean;
@@ -38,9 +39,9 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
         <Link
           href="/"
           onClick={onClose}
-          className="font-serif text-xl tracking-wide text-navy"
+          className="transition-opacity hover:opacity-80"
         >
-          {siteConfig.name}
+          <Logo size="sm" />
         </Link>
         <button
           type="button"
@@ -95,7 +96,6 @@ export function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Home hero is a dark full-bleed image — invert nav for contrast until scroll
   const onDarkHero = pathname === "/" && !scrolled;
 
   return (
@@ -109,14 +109,9 @@ export function Header() {
               : "bg-transparent"
         }`}
       >
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-10">
-          <Link
-            href="/"
-            className={`font-serif text-xl md:text-2xl tracking-[0.04em] transition-opacity hover:opacity-70 ${
-              onDarkHero ? "text-white" : "text-navy"
-            }`}
-          >
-            {siteConfig.name}
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-10">
+          <Link href="/" className="transition-opacity hover:opacity-85">
+            <Logo light={onDarkHero} size="md" />
           </Link>
 
           <nav
