@@ -6,6 +6,7 @@ import { StorySection } from "@/components/StorySection";
 import { CollectionSection } from "@/components/CollectionSection";
 import { CommissionCTA } from "@/components/CommissionCTA";
 import { InstagramGallery } from "@/components/InstagramGallery";
+import { HistorySection } from "@/components/HistorySection";
 import { DecorativeRule, SectionEyebrow, Wave } from "@/components/Accents";
 import { getFeaturedPieces } from "@/lib/pieces";
 import { instagramPosts } from "@/data/instagram";
@@ -85,6 +86,8 @@ export default function HomePage() {
         imageSrc="/images/studio/studio-14.jpeg"
         imageAlt="Nantucket lightship basket by Chatham Weaves among Cape Cod flowers"
       />
+
+      <HistorySection />
 
       <CollectionSection
         categories={[

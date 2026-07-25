@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { siteConfig } from "@/config/site";
+import { historyImages, historyNotes } from "@/data/history";
 
 export const metadata: Metadata = {
   title: "About",
@@ -127,6 +128,20 @@ export default function AboutPage() {
                 />
               </div>
             </div>
+            <div className="photo-plate rotate-[-0.35deg] !p-1.5 !pb-1.5">
+              <div className="relative aspect-[5/4] overflow-hidden bg-linen">
+                <Image
+                  src="/images/history/south-shoal-lightship.jpg"
+                  alt="Historic Nantucket New South Shoal Lightship"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                  className="object-cover sepia-[0.4]"
+                />
+              </div>
+              <p className="mt-2 px-1 font-script text-base text-oxblood-faded">
+                where the craft began
+              </p>
+            </div>
             <div className="texture-weave border border-border px-4 py-4">
               <p className="label-archival text-oxblood">Studio Hours</p>
               <p className="mt-3 font-serif text-sm leading-relaxed text-charcoal-soft">
@@ -155,6 +170,54 @@ export default function AboutPage() {
               </div>
             </article>
           ))}
+
+          <article id="tradition">
+            <h2 className="font-serif text-xl tracking-tight text-navy md:text-2xl">
+              The Lightship Tradition
+            </h2>
+            <hr className="rule-short mt-3" />
+            <p className="mt-4 font-serif text-[0.98rem] leading-relaxed text-charcoal-soft">
+              {historyNotes.intro}
+            </p>
+            <p className="mt-4 font-serif text-[0.98rem] leading-relaxed text-charcoal-soft">
+              {historyNotes.paragraphs[0]}
+            </p>
+            <p className="mt-4 font-serif text-[0.98rem] leading-relaxed text-charcoal-soft">
+              {historyNotes.paragraphs[1]}
+            </p>
+            <ul className="mt-6 grid gap-3 sm:grid-cols-2">
+              {historyNotes.hallmarks.map((h) => (
+                <li
+                  key={h.label}
+                  className="border border-dashed border-seafoam/35 bg-cream/60 px-3 py-3"
+                >
+                  <p className="label-archival text-seafoam">{h.label}</p>
+                  <p className="mt-1 font-serif text-sm text-charcoal-soft">
+                    {h.detail}
+                  </p>
+                </li>
+              ))}
+            </ul>
+            <div className="mt-6 grid grid-cols-2 gap-3">
+              {historyImages.slice(0, 4).map((img) => (
+                <figure key={img.id} className="photo-plate !p-1 !pb-1">
+                  <div className="relative aspect-square overflow-hidden bg-linen">
+                    <Image
+                      src={img.src}
+                      alt={img.alt}
+                      fill
+                      sizes="20vw"
+                      className="object-cover sepia-[0.35]"
+                      loading="lazy"
+                    />
+                  </div>
+                </figure>
+              ))}
+            </div>
+            <p className="mt-3 font-serif text-[0.65rem] italic text-warm-gray">
+              Archival images are public domain or openly licensed.
+            </p>
+          </article>
 
           <article id="showcase">
             <h2 className="font-serif text-xl tracking-tight text-navy md:text-2xl">
