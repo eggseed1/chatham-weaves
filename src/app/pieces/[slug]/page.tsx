@@ -39,12 +39,12 @@ export default async function PiecePage({ params }: PiecePageProps) {
   const related = getRelatedPieces(piece, 3);
 
   return (
-    <div className="bg-ivory pt-20 lg:pt-24">
+    <div className="bg-ivory page-top">
       <PieceDetail piece={piece} />
 
       {related.length > 0 && (
-        <section className="border-t border-rule bg-cream py-16 lg:py-24">
-          <div className="mx-auto max-w-7xl px-6 lg:px-10">
+        <section className="border-t border-rule bg-cream section-y">
+          <div className="site-container">
             <p className="label-archival text-oxblood">Continue Looking</p>
             <h2 className="mt-3 mb-10 font-serif text-[1.65rem] tracking-tight text-navy md:text-[1.85rem]">
               Related Pieces

@@ -27,9 +27,9 @@ export default async function CollectionPage({
   const pieces = getAllPieces();
 
   return (
-    <div className="bg-ivory pt-28 pb-24 lg:pt-32 lg:pb-28">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <header className="mb-12 max-w-xl">
+    <div className="bg-ivory page-shell">
+      <div className="site-container">
+        <header className="section-head max-w-xl">
           <p className="label-archival text-oxblood">Portfolio & Catalog</p>
           <hr className="rule-short mt-4" />
           <h1 className="mt-5 font-serif text-[2.35rem] tracking-tight text-navy md:text-5xl">
@@ -37,7 +37,7 @@ export default async function CollectionPage({
           </h1>
           <p className="mt-5 font-serif text-[0.98rem] leading-relaxed text-charcoal-soft">
             An editorial gallery of available work, past pieces, and commission
-            examples. Sold pieces remain here as inspiration — inquire about
+            examples. Sold pieces remain here as inspiration. Inquire about
             creating something similar.
           </p>
         </header>

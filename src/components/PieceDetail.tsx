@@ -17,7 +17,7 @@ export function PieceDetail({ piece }: PieceDetailProps) {
     piece.status === "available" || piece.status === "made-to-order";
 
   return (
-    <div className="mx-auto grid max-w-7xl gap-12 px-6 py-14 lg:grid-cols-12 lg:gap-14 lg:px-10 lg:py-20">
+    <div className="site-container grid gap-split py-14 lg:grid-cols-12 lg:py-16">
       <div className="lg:col-span-7">
         <PieceGallery images={piece.images} name={piece.name} />
       </div>
@@ -113,7 +113,7 @@ export function PieceDetail({ piece }: PieceDetailProps) {
                 external
               />
               <p className="font-serif text-xs italic text-warm-gray">
-                Messaging does not reserve or purchase the piece — we&apos;ll
+                Messaging does not reserve or purchase the piece. We&apos;ll
                 confirm availability personally.
               </p>
             </>

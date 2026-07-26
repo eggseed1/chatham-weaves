@@ -12,9 +12,9 @@ export function StorySection({
   imageAlt = "The maker at work weaving Nantucket baskets",
 }: StorySectionProps) {
   return (
-    <section className="relative bg-ivory py-20 lg:py-28">
-      <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 lg:grid-cols-12 lg:gap-10 lg:px-10">
-        <div className="relative lg:col-span-6 lg:translate-x-2">
+    <section className="relative bg-ivory section-y">
+      <div className="site-container grid items-center gap-split lg:grid-cols-12">
+        <div className="relative lg:col-span-6">
           <div className="photo-plate photo-natural rotate-[0.5deg]">
             <div className="relative aspect-[4/5] overflow-hidden bg-linen">
               <Image
@@ -31,7 +31,7 @@ export function StorySection({
           </p>
         </div>
 
-        <div className="lg:col-span-5 lg:col-start-8 lg:-translate-y-6">
+        <div className="lg:col-span-5 lg:col-start-8">
           <SectionEyebrow accent="coral">Meet Janene</SectionEyebrow>
           <DecorativeRule motif="hydrangea" className="mt-4 max-w-[12rem]" />
           <h2 className="mt-5 font-serif text-[1.85rem] tracking-tight text-navy md:text-[2.15rem] md:leading-snug">
@@ -40,7 +40,7 @@ export function StorySection({
           <p className="mt-6 font-serif text-[0.98rem] leading-relaxed text-charcoal-soft">
             Janene Marie first recognized the beauty of Nantucket baskets while
             vacationing on the island as a youth. She promised herself she would
-            one day learn to weave — and after years of tutelage and East Coast
+            one day learn to weave, and after years of tutelage and East Coast
             weaving conferences, that promise became this little Chatham studio.
           </p>
           <p className="mt-4 font-script text-xl text-seafoam">

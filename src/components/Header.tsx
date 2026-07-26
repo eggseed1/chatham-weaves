@@ -3,7 +3,9 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { siteConfig } from "@/config/site";
-import { Scallop, TinyBasket } from "@/components/Accents";
+import { Logo } from "@/components/Logo";
+import { Scallop } from "@/components/Accents";
+import { SocialLinks } from "@/components/SocialLinks";
 
 interface MobileMenuProps {
   open: boolean;
@@ -38,10 +40,9 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
         <Link
           href="/"
           onClick={onClose}
-          className="flex items-center gap-2 font-serif text-lg tracking-wide text-navy"
+          className="transition-opacity hover:opacity-80"
         >
-          <TinyBasket className="text-seafoam" size={18} />
-          {siteConfig.name}
+          <Logo size="sm" />
         </Link>
         <button
           type="button"
@@ -53,7 +54,7 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
         </button>
       </div>
 
-      <nav className="flex flex-1 flex-col justify-center px-8 gap-7">
+      <nav className="flex flex-1 flex-col justify-center px-6 gap-7">
         {siteConfig.nav.map((item, i) => (
           <Link
             key={item.href}
@@ -65,19 +66,15 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
             {item.label}
           </Link>
         ))}
-        <a
-          href={siteConfig.social.instagram.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={onClose}
-          className="font-serif text-3xl text-oxblood tracking-tight animate-fade-up"
+        <div
+          className="animate-fade-up pt-2"
           style={{ animationDelay: `${siteConfig.nav.length * 60}ms` }}
         >
-          Instagram
-        </a>
+          <SocialLinks onNavigate={onClose} iconSize={20} />
+        </div>
       </nav>
 
-      <div className="flex items-center gap-3 px-8 pb-10">
+      <div className="flex items-center gap-3 px-6 pb-10">
         <Scallop className="ornament-coral" size={20} />
         <p className="font-script text-xl text-seafoam">by hand, always</p>
       </div>
@@ -90,7 +87,21 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 16);
+    let ticking = false;
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const y = window.scrollY;
+        // Hysteresis so the bar doesn't flicker around the threshold
+        setScrolled((prev) => {
+          if (prev && y < 8) return false;
+          if (!prev && y > 24) return true;
+          return prev;
+        });
+        ticking = false;
+      });
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -98,25 +109,19 @@ export function Header() {
 
   return (
     <>
-      <header
-        className={`fixed inset-x-0 top-0 z-40 transition-colors duration-300 ${
-          scrolled ? "bg-ivory/97 border-b border-rule" : "bg-transparent"
-        }`}
-      >
-        {!scrolled && (
-          <div className="hidden border-b border-dashed border-seafoam/25 bg-cream/70 md:block">
-            <p className="mx-auto max-w-7xl px-6 py-1.5 text-center font-script text-[0.95rem] text-seafoam lg:px-10">
-              handmade on Cape Cod · text Janene anytime · every weave is an act of love
-            </p>
-          </div>
-        )}
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-10">
-          <Link
-            href="/"
-            className="flex items-center gap-2 font-serif text-lg md:text-xl tracking-[0.02em] text-navy transition-colors hover:text-oxblood"
-          >
-            <TinyBasket className="text-seafoam" size={18} />
-            {siteConfig.name}
+      <header className="fixed inset-x-0 top-0 z-40 bg-ivory/95 backdrop-blur-[2px]">
+        <div className="hidden border-b border-dashed border-seafoam/25 bg-cream/70 md:block">
+          <p className="site-container py-1.5 text-center font-script text-[0.95rem] text-seafoam">
+            handmade on Cape Cod · woven by Janene
+          </p>
+        </div>
+        <div
+          className={`site-container flex items-center justify-between py-3 ${
+            scrolled ? "border-b border-rule" : "border-b border-transparent"
+          }`}
+        >
+          <Link href="/" className="transition-opacity hover:opacity-85">
+            <Logo size="md" />
           </Link>
 
           <nav
@@ -132,14 +137,7 @@ export function Header() {
                 {item.label}
               </Link>
             ))}
-            <a
-              href={siteConfig.social.instagram.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="chip chip-coral !normal-case !tracking-normal !text-[0.72rem] !font-script !px-3"
-            >
-              Instagram ♡
-            </a>
+            <SocialLinks />
           </nav>
 
           <button

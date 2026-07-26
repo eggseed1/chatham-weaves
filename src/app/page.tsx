@@ -6,7 +6,6 @@ import { StorySection } from "@/components/StorySection";
 import { CollectionSection } from "@/components/CollectionSection";
 import { CommissionCTA } from "@/components/CommissionCTA";
 import { InstagramGallery } from "@/components/InstagramGallery";
-import { HistorySection } from "@/components/HistorySection";
 import { DecorativeRule, SectionEyebrow, Wave } from "@/components/Accents";
 import { getFeaturedPieces } from "@/lib/pieces";
 import { instagramPosts } from "@/data/instagram";
@@ -29,10 +28,10 @@ export default function HomePage() {
         imageAlt="Chatham Weaves handmade Nantucket basket lifestyle"
       />
 
-      <section className="bg-ivory py-16 lg:py-24">
-        <div className="mx-auto max-w-7xl px-6 lg:px-10">
-          <DecorativeRule motif="wave" className="mb-10 max-w-sm" />
-          <div className="mb-10 flex flex-col gap-3 sm:mb-14 sm:flex-row sm:items-end sm:justify-between">
+      <section className="bg-ivory section-y">
+        <div className="site-container">
+          <DecorativeRule motif="wave" className="mb-8 max-w-sm" />
+          <div className="section-head flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <SectionEyebrow accent="seafoam">Fresh from the studio</SectionEyebrow>
               <h2 className="mt-3 font-serif text-[1.85rem] tracking-tight text-navy md:text-[2.15rem]">
@@ -50,7 +49,7 @@ export default function HomePage() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-2 gap-x-4 gap-y-12 sm:gap-x-7 sm:gap-y-16 md:grid-cols-3">
+          <div className="grid grid-cols-2 gap-cards md:grid-cols-3">
             {featured.map((piece, i) => (
               <PieceCard
                 key={piece.id}
@@ -70,8 +69,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="border-y border-dashed border-seafoam/30 bg-cream/80 py-8">
-        <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-center gap-x-8 gap-y-3 px-6 text-center">
+      <section className="border-y border-dashed border-seafoam/30 bg-cream/80 section-y-xs">
+        <div className="site-container flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-center">
           <p className="font-script text-xl text-seafoam">Cape Cod summers</p>
           <Wave className="ornament-coral hidden sm:block" size={30} />
           <p className="font-script text-xl text-oxblood-faded">
@@ -86,8 +85,6 @@ export default function HomePage() {
         imageSrc="/images/studio/studio-14.jpeg"
         imageAlt="Nantucket lightship basket by Chatham Weaves among Cape Cod flowers"
       />
-
-      <HistorySection />
 
       <CollectionSection
         categories={[

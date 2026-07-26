@@ -38,7 +38,7 @@ const steps = [
   {
     n: "04",
     title: "Handmade",
-    body: "Your piece is woven by hand — patiently, carefully, one strand at a time.",
+    body: "Your piece is woven by hand, patiently, carefully, one strand at a time.",
   },
   {
     n: "05",
@@ -50,16 +50,16 @@ const steps = [
 export default function CommissionsPage() {
   return (
     <div className="bg-ivory">
-      <section className="pt-28 pb-12 lg:pt-32 lg:pb-16">
-        <div className="mx-auto grid max-w-7xl items-end gap-10 px-6 lg:grid-cols-12 lg:px-10">
-          <div className="lg:col-span-5 lg:pb-4">
+      <section className="page-top pb-16 lg:pb-20">
+        <div className="site-container grid items-end gap-split lg:grid-cols-12">
+          <div className="lg:col-span-5">
             <p className="label-archival text-oxblood">Custom Work</p>
             <hr className="rule-short mt-4" />
             <h1 className="mt-5 font-serif text-[2.35rem] tracking-tight text-navy md:text-5xl">
               Commissions
             </h1>
             <p className="mt-5 max-w-md font-serif text-[0.98rem] italic leading-relaxed text-charcoal-soft">
-              Custom Nantucket baskets and jewelry made for your story —
+              Custom Nantucket baskets and jewelry made for your story:
               weddings, gifts, memorials, and everyday heirlooms.
             </p>
           </div>
@@ -80,8 +80,8 @@ export default function CommissionsPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
-        <div className="grid gap-16 lg:grid-cols-2 lg:gap-20">
+      <section className="site-container section-y">
+        <div className="grid gap-split lg:grid-cols-2">
           <div>
             <h2 className="font-serif text-[1.65rem] tracking-tight text-navy">
               What we create
@@ -127,14 +127,14 @@ export default function CommissionsPage() {
           </div>
         </div>
 
-        <div className="mt-20 border border-rule bg-cream/70 px-6 py-14 text-center md:px-12">
+        <div className="mt-16 border border-dashed border-seafoam/40 bg-cream/70 px-6 py-12 text-center md:px-10 md:py-14">
           <p className="label-archival text-oxblood">Begin Here</p>
           <h2 className="mt-4 font-serif text-[1.85rem] tracking-tight text-navy md:text-[2.15rem]">
             Start a Commission
           </h2>
           <p className="mx-auto mt-5 max-w-md font-serif text-[0.98rem] leading-relaxed text-charcoal-soft">
             Message {siteConfig.social.instagram.handle} to begin. Share your
-            ideas, timing, and any inspiration — we&apos;ll take it from there.
+            ideas, timing, and any inspiration. We&apos;ll take it from there.
           </p>
           <p className="mt-4 font-script text-xl text-oxblood-faded">
             made for one person only

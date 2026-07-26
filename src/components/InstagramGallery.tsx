@@ -9,9 +9,9 @@ interface InstagramGalleryProps {
 
 export function InstagramGallery({ posts }: InstagramGalleryProps) {
   return (
-    <section className="bg-ivory py-20 lg:py-28">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <div className="mb-10 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+    <section className="bg-ivory section-y">
+      <div className="site-container">
+        <div className="section-head flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <SectionEyebrow accent="coral">
               {siteConfig.social.instagram.handle}
@@ -35,7 +35,7 @@ export function InstagramGallery({ posts }: InstagramGalleryProps) {
 
         <DecorativeRule motif="wave" className="mb-8 max-w-xs" />
 
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 md:gap-4">
+        <div className="grid grid-cols-2 gap-thumbs sm:grid-cols-3 md:grid-cols-4">
           {posts.slice(0, 8).map((post, i) => (
             <a
               key={post.id}

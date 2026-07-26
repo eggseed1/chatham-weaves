@@ -1,5 +1,5 @@
 /**
- * Product / Piece types — presentation-layer agnostic.
+ * Product / Piece types, presentation-layer agnostic.
  * Structured so Shopify (or another ecommerce source) can map into these
  * interfaces later without redesigning frontend components.
  */

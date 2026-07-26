@@ -5,7 +5,7 @@ interface AccentProps {
   size?: number;
 }
 
-/** Tiny hand-drawn coastal flourishes — used sparingly for small-shop charm */
+/** Tiny hand-drawn coastal flourishes, used sparingly for small-shop charm */
 
 export function Scallop({ className = "", size = 22 }: AccentProps) {
   return (

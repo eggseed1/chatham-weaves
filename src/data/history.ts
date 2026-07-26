@@ -1,5 +1,5 @@
 /**
- * Historical Nantucket lightship basket tradition — for the artisanal story.
+ * Historical Nantucket lightship basket tradition, for the artisanal story.
  * Images in /public/images/history/ are public domain or openly licensed.
  * See credit fields for attribution.
  */
@@ -18,21 +18,21 @@ export const historyImages: HistoryImage[] = [
     src: "/images/history/nesting-lightship-baskets.jpg",
     caption: "Nesting lightship baskets by Davis Hall, Nantucket, c. 1875–1890",
     credit:
-      "American Folk Art Museum — Gift of Jerry and Susan Lauren; believed public domain",
+      "American Folk Art Museum. Gift of Jerry and Susan Lauren; believed public domain",
     alt: "Historic nested Nantucket lightship baskets by Davis Hall",
   },
   {
     id: "south-shoal-lightship",
     src: "/images/history/south-shoal-lightship.jpg",
     caption:
-      "Nantucket New South Shoal Lightship — where island weavers perfected the craft offshore",
+      "Nantucket New South Shoal Lightship, where island weavers perfected the craft offshore",
     credit: "U.S. Coast Guard / Public domain",
     alt: "Historic photograph of the Nantucket New South Shoal Lightship",
   },
   {
     id: "main-street-kilburn",
     src: "/images/history/main-street-kilburn.jpg",
-    caption: "Main Street, Nantucket — late 19th century",
+    caption: "Main Street, Nantucket, late 19th century",
     credit: "Kilburn Brothers / Public domain via Wikimedia Commons",
     alt: "Historic photograph of Main Street, Nantucket",
   },
@@ -76,16 +76,24 @@ export const historyImages: HistoryImage[] = [
 export const historyNotes = {
   title: "A Craft Born on the Lightships",
   intro:
-    "Long before boutique studios and summer pop-ups, Nantucket’s signature baskets were woven offshore — aboard lightships that marked the dangerous shoals around the island.",
+    "Long before boutique studios and summer pop-ups, Nantucket’s signature baskets were woven offshore, aboard lightships that marked the dangerous shoals around the island.",
+  /** Short homepage story, keep lean and inviting */
+  home: {
+    title: "Born on the Lightships",
+    lead: "Nantucket’s signature baskets began offshore, woven by sailors on long watches over the shoals.",
+    close:
+      "Janene fell in love with that tradition as a girl on the island. Today she weaves it by hand in Chatham.",
+    flourish: "from lightship watches to heirloom weaves",
+  },
   paragraphs: [
     "True Nantucket lightship baskets share four hallmarks: they are woven on a mold; the staves are rattan; the weavers are cane; and each basket rests on a solid wood base. The form grew through the nineteenth century as sturdy work baskets for island shops, kitchens, and workshops.",
-    "Men stationed on the Nantucket lightships — especially the South Shoal vessels — spent long watches weaving between duties. Their baskets were practical first. When Nantucket shifted from a whaling port to a destination for visitors in the 1860s and after, those same baskets became beloved keepsakes of an island stay.",
+    "Men stationed on the Nantucket lightships, especially the South Shoal vessels, spent long watches weaving between duties. Their baskets were practical first. When Nantucket shifted from a whaling port to a destination for visitors in the 1860s and after, those same baskets became beloved keepsakes of an island stay.",
     "Janene Marie first fell in love with that tradition while vacationing on Nantucket as a youth. She returned again and again, studying the history and technique, promising herself she would one day learn to weave and honor the craft. Today, every Chatham Weaves piece carries a thread of that island story into Cape Cod life.",
   ],
   hallmarks: [
     { label: "Woven on a mold", detail: "Shape held true from the first stave" },
     { label: "Rattan staves", detail: "The upright bones of the basket" },
-    { label: "Cane weavers", detail: "Fine, even rows — the signature look" },
+    { label: "Cane weavers", detail: "Fine, even rows: the signature look" },
     {
       label: "Solid wood base",
       detail: "Strength for everyday use & heirloom years",
@@ -106,7 +114,8 @@ export const historyNotes = {
     },
     {
       year: "Today",
-      text: "Janene Marie carries the tradition forward from her Chatham studio — one weave at a time.",
+      text: "Janene Marie carries the tradition forward from her Chatham studio, one weave at a time.",
     },
   ],
 } as const;
+

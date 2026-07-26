@@ -16,9 +16,9 @@ interface CollectionSectionProps {
 
 export function CollectionSection({ categories }: CollectionSectionProps) {
   return (
-    <section className="bg-cream py-20 lg:py-28">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <div className="mb-12 flex flex-col gap-3 md:mb-16 md:max-w-md">
+    <section className="bg-cream section-y">
+      <div className="site-container">
+        <div className="section-head flex flex-col gap-3 md:max-w-md">
           <SectionEyebrow accent="sky">Peek inside the shop</SectionEyebrow>
           <h2 className="font-serif text-[1.85rem] tracking-tight text-navy md:text-[2.15rem]">
             The Collection
@@ -28,7 +28,7 @@ export function CollectionSection({ categories }: CollectionSectionProps) {
           </p>
         </div>
 
-        <div className="grid gap-8 sm:grid-cols-2 lg:gap-x-10 lg:gap-y-14">
+        <div className="grid gap-tiles sm:grid-cols-2">
           {categories.map((cat, i) => (
             <Link
               key={cat.category}

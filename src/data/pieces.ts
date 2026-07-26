@@ -4,7 +4,7 @@
  * =============================================================================
  *
  * This is the single source of truth for the collection.
- * Page layouts pull from this file — you should not edit product info in
+ * Page layouts pull from this file, you should not edit product info in
  * components or page files.
  *
  * HOW TO ADD A PIECE
@@ -13,7 +13,7 @@
  * 3. Set featured: true to show it on the homepage
  *
  * HOW TO MARK SOLD
- * Change status to "sold" — the piece stays visible in the collection.
+ * Change status to "sold", the piece stays visible in the collection.
  *
  * HOW TO CHANGE PRICE
  * Set price: 450 (number in USD) or remove the price field for "by inquiry".
@@ -43,7 +43,7 @@ export const pieces: Piece[] = [
     status: "sold",
     featured: true,
     description:
-      "A classic open bucket silhouette — the perfect summer companion for market mornings and coastal evenings. Handwoven with care in the Nantucket tradition.",
+      "A classic open bucket silhouette, the perfect summer companion for market mornings and coastal evenings. Handwoven with care in the Nantucket tradition.",
     materials: "Traditional Nantucket weave; natural cane and hardwood accents",
     dimensions: "[PLACEHOLDER: confirm dimensions with maker]",
     details:
@@ -64,7 +64,7 @@ export const pieces: Piece[] = [
     status: "sold",
     featured: true,
     description:
-      "A refined crossbody weave designed to move with you — from luncheons to evenings by the water. Soft structure with timeless coastal elegance.",
+      "A refined crossbody weave designed to move with you, from luncheons to evenings by the water. Soft structure with timeless coastal elegance.",
     materials: "Nantucket weave with leather strap detailing",
     dimensions: "[PLACEHOLDER: confirm dimensions with maker]",
     details:
@@ -85,7 +85,7 @@ export const pieces: Piece[] = [
     status: "commission-example",
     featured: true,
     description:
-      "A custom 10\" tote woven in cherry ebony and ivory for a bride preparing for her chapel day — an heirloom piece meant to be carried for a lifetime.",
+      "A custom 10\" tote woven in cherry ebony and ivory for a bride preparing for her chapel day, an heirloom piece meant to be carried for a lifetime.",
     materials: "Cherry ebony and ivory weave",
     dimensions: '10" tote',
     details:
@@ -106,7 +106,7 @@ export const pieces: Piece[] = [
     status: "made-to-order",
     featured: true,
     description:
-      "A distinguished bucket bag in walnut with mammoth accents — rich, warm, and unmistakably handcrafted. Made to order for those who appreciate rare materials.",
+      "A distinguished bucket bag in walnut with mammoth accents: rich, warm, and unmistakably handcrafted. Made to order for those who appreciate rare materials.",
     materials: "Walnut weave with mammoth detailing",
     dimensions: "[PLACEHOLDER: confirm dimensions with maker]",
     details:
@@ -127,7 +127,7 @@ export const pieces: Piece[] = [
     status: "sold",
     featured: true,
     description:
-      "A stunning Martha Lawrence kidney tote finished with a custom name plate in ebony and ivory — classic form with a personal signature.",
+      "A stunning Martha Lawrence kidney tote finished with a custom name plate in ebony and ivory, classic form with a personal signature.",
     materials: "Ebony and ivory; Martha Lawrence kidney form",
     dimensions: "[PLACEHOLDER: confirm dimensions with maker]",
     details:
@@ -148,7 +148,7 @@ export const pieces: Piece[] = [
     status: "available",
     featured: true,
     description:
-      "A one-of-a-kind coastal weave with playful spirit and meticulous craft — a conversation piece that still feels wearable and refined.",
+      "A one-of-a-kind coastal weave with playful spirit and meticulous craft, a conversation piece that still feels wearable and refined.",
     materials: "[PLACEHOLDER: confirm materials with maker]",
     dimensions: "[PLACEHOLDER: confirm dimensions with maker]",
     details:
@@ -169,7 +169,7 @@ export const pieces: Piece[] = [
     status: "made-to-order",
     featured: true,
     description:
-      "A custom Chatham Weaves bracelet finished with shell end caps — a summer favorite that pairs beautifully stacked or worn alone.",
+      "A custom Chatham Weaves bracelet finished with shell end caps, a summer favorite that pairs beautifully stacked or worn alone.",
     materials: "Nantucket weave with shell end caps",
     dimensions: "Custom sized to wrist",
     details:
@@ -190,7 +190,7 @@ export const pieces: Piece[] = [
     status: "commission-example",
     featured: true,
     description:
-      "A beautiful stack including a Nantucket cuff — woven jewelry that carries memory, friendship, and quiet coastal luxury.",
+      "A beautiful stack including a Nantucket cuff, woven jewelry that carries memory, friendship, and quiet coastal luxury.",
     materials: "Nantucket cuff weave; mixed stack finishes",
     dimensions: "Custom sized",
     details:
@@ -211,7 +211,7 @@ export const pieces: Piece[] = [
     status: "commission-example",
     featured: false,
     description:
-      "A practical woven kitchen staple made for a cherished client and friend — proof that heirloom craft belongs in everyday life.",
+      "A practical woven kitchen staple made for a cherished client and friend, proof that heirloom craft belongs in everyday life.",
     materials: "Traditional Nantucket weave",
     dimensions: "[PLACEHOLDER: confirm dimensions with maker]",
     details: "Ideal as a housewarming or hostess gift. Custom sizes available.",
@@ -231,7 +231,7 @@ export const pieces: Piece[] = [
     status: "sold",
     featured: false,
     description:
-      "A playful cherrywood weave with spring spirit — lighthearted in character, serious in craftsmanship.",
+      "A playful cherrywood weave with spring spirit: lighthearted in character, serious in craftsmanship.",
     materials: "Cherrywood Nantucket weave",
     dimensions: "[PLACEHOLDER: confirm dimensions with maker]",
     images: [
@@ -250,7 +250,7 @@ export const pieces: Piece[] = [
     status: "commission-example",
     featured: false,
     description:
-      "A custom ivory weave created for a birthday celebration — personal, luminous, and made to mark a moment.",
+      "A custom ivory weave created for a birthday celebration: personal, luminous, and made to mark a moment.",
     materials: "Ivory Nantucket weave",
     dimensions: "[PLACEHOLDER: confirm dimensions with maker]",
     details: "Custom birthday and occasion pieces welcome year-round.",
@@ -270,7 +270,7 @@ export const pieces: Piece[] = [
     status: "commission-example",
     featured: false,
     description:
-      "A cherry Nantucket coaster — small in scale, generous in detail. Originally woven as a community gala donation.",
+      "A cherry Nantucket coaster, small in scale, generous in detail. Originally woven as a community gala donation.",
     materials: "Cherry Nantucket weave",
     dimensions: "Coaster size",
     details:
@@ -291,7 +291,7 @@ export const pieces: Piece[] = [
     status: "commission-example",
     featured: false,
     description:
-      "A special Nantucket cuff created in memory of a beloved companion — weaving as remembrance, worn close to the heart.",
+      "A special Nantucket cuff created in memory of a beloved companion: weaving as remembrance, worn close to the heart.",
     materials: "Ivory heart accents; Nantucket cuff weave",
     dimensions: "Custom sized",
     details:
@@ -324,7 +324,7 @@ export const pieces: Piece[] = [
     status: "sold",
     featured: false,
     description:
-      "Pretty in pink — a refined ebony cuff with soft color, woven at a delicate 1/4\" scale.",
+      "Pretty in pink: a refined ebony cuff with soft color, woven at a delicate 1/4\" scale.",
     materials: "Ebony weave with pink accent",
     dimensions: '1/4" cuff, custom sized',
     images: [
@@ -355,7 +355,7 @@ export const pieces: Piece[] = [
     status: "available",
     featured: false,
     description:
-      "Coastal charm in a bleached weave — light, airy Nantucket bracelets that bring a quiet glow to any stack.",
+      "Coastal charm in a bleached weave: light, airy Nantucket bracelets that bring a quiet glow to any stack.",
     materials: "Ivory / bleached Nantucket weave",
     dimensions: "Custom sized",
     details: "Message for current availability and sizing.",
@@ -375,7 +375,7 @@ export const pieces: Piece[] = [
     status: "sold",
     featured: false,
     description:
-      "Classic Nantucket cuffs worn among friends — woven jewelry that becomes part of the gatherings and seasons of Cape Cod life.",
+      "Classic Nantucket cuffs worn among friends, woven jewelry that becomes part of the gatherings and seasons of Cape Cod life.",
     materials: "Traditional Nantucket cuff weave",
     dimensions: "Custom sized",
     images: [
@@ -394,7 +394,7 @@ export const pieces: Piece[] = [
     status: "available",
     featured: false,
     description:
-      "A summer stack of woven bracelets — layered texture in coastal tones for luncheons, beach clubs, and long Cape evenings.",
+      "A summer stack of woven bracelets with layered texture in coastal tones for luncheons, beach clubs, and long Cape evenings.",
     materials: "Assorted Nantucket weaves",
     dimensions: "Custom sized; sold individually or as stacks",
     details: "Ask about building a custom stack.",
@@ -414,7 +414,7 @@ export const pieces: Piece[] = [
     status: "sold",
     featured: false,
     description:
-      "Spring in bloom — a cherry weave celebrating hydrangea season and the soft color of Cape Cod gardens.",
+      "Spring in bloom: a cherry weave celebrating hydrangea season and the soft color of Cape Cod gardens.",
     materials: "Cherry Nantucket weave",
     dimensions: "[PLACEHOLDER: confirm dimensions with maker]",
     images: [

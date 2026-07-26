@@ -6,13 +6,13 @@ import { InquireButton } from "@/components/InquireButton";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Contact Chatham Weaves — Janene weaves full time from her Chatham home studio. Text or Instagram message is best.",
+    "Contact Chatham Weaves. Janene weaves full time from her Chatham home studio. Text or Instagram message is best.",
 };
 
 export default function ContactPage() {
   return (
-    <div className="bg-ivory pt-28 pb-24 lg:pt-32 lg:pb-28">
-      <div className="mx-auto max-w-2xl px-6 text-center lg:px-10">
+    <div className="bg-ivory page-shell">
+      <div className="site-container-narrow text-center">
         <p className="label-archival text-oxblood">Get in Touch</p>
         <hr className="rule-short mx-auto mt-4" />
         <h1 className="mt-5 font-serif text-[2.35rem] tracking-tight text-navy md:text-5xl">
@@ -20,7 +20,7 @@ export default function ContactPage() {
         </h1>
         <p className="mx-auto mt-6 max-w-lg font-serif text-[0.98rem] leading-relaxed text-charcoal-soft">
           Always available for a conversation. Janene weaves full time at her
-          home studio in Chatham — text is best. Instagram messages are welcome
+          home studio in Chatham. Text is best. Instagram messages are welcome
           for availability, purchasing, and commissions.
         </p>
         <p className="mt-4 font-script text-xl text-oxblood-faded">
@@ -82,7 +82,7 @@ export default function ContactPage() {
               {siteConfig.showcase.map((place) => (
                 <li key={place.name} className="font-serif text-sm text-navy">
                   {place.name}
-                  <span className="text-charcoal-soft"> — {place.location}</span>
+                  <span className="text-charcoal-soft">, {place.location}</span>
                 </li>
               ))}
             </ul>
@@ -99,14 +99,6 @@ export default function ContactPage() {
             <p className="mt-2 font-serif text-xs italic text-warm-gray">
               [PLACEHOLDER: confirm email / phone for texting with client]
             </p>
-            <a
-              href={siteConfig.social.chamber.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-4 inline-block label-archival text-oxblood transition-colors hover:text-navy"
-            >
-              Chatham Chamber of Commerce listing →
-            </a>
           </div>
         </div>
       </div>

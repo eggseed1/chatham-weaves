@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  /* Warm cream paper — sunlit beach cottage */
+  /* Warm cream paper, sunlit beach cottage */
   --ivory: #f6eee3;
   --cream: #efe4d2;
   --linen: #e4d5be;
@@ -13,7 +13,7 @@
   /* Coral / faded rose accent (coastal cute) */
   --oxblood: #c45c5c;
   --oxblood-faded: #d4847a;
-  /* Seafoam + sky — coastal accent pair */
+  /* Seafoam + sky, coastal accent pair */
   --seafoam: #7fa8a0;
   --seafoam-soft: #a8c7c1;
   --sky: #8fb4c9;
@@ -54,7 +54,17 @@
 }
 
 html {
+  /* Native smooth scroll as fallback; Lenis handles the primary feel */
   scroll-behavior: smooth;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
 }
 
 body {
@@ -95,6 +105,135 @@ body {
 
 .font-script {
   font-family: var(--font-script), cursive;
+}
+
+/* -------------------------------------------------------------------------
+   Spacing system — keep page/section rhythm consistent
+   ------------------------------------------------------------------------- */
+.site-container {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 80rem; /* max-w-7xl */
+  padding-inline: 1.5rem; /* px-6 */
+}
+
+@media (min-width: 1024px) {
+  .site-container {
+    padding-inline: 2.5rem; /* lg:px-10 */
+  }
+}
+
+.site-container-narrow {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 42rem; /* max-w-2xl */
+  padding-inline: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .site-container-narrow {
+    padding-inline: 2.5rem;
+  }
+}
+
+/* Clear fixed header (banner + logo bar) */
+.page-top {
+  padding-top: 7rem; /* ~112px */
+}
+
+@media (min-width: 1024px) {
+  .page-top {
+    padding-top: 8rem; /* ~128px */
+  }
+}
+
+.page-shell {
+  padding-top: 7rem;
+  padding-bottom: 6rem;
+}
+
+@media (min-width: 1024px) {
+  .page-shell {
+    padding-top: 8rem;
+    padding-bottom: 7rem;
+  }
+}
+
+.section-y {
+  padding-block: 5rem; /* py-20 */
+}
+
+@media (min-width: 1024px) {
+  .section-y {
+    padding-block: 7rem; /* lg:py-28 */
+  }
+}
+
+.section-y-sm {
+  padding-block: 3.5rem; /* py-14 */
+}
+
+@media (min-width: 1024px) {
+  .section-y-sm {
+    padding-block: 4rem; /* lg:py-16 */
+  }
+}
+
+.section-y-xs {
+  padding-block: 2rem; /* py-8 */
+}
+
+.section-head {
+  margin-bottom: 2.5rem; /* mb-10 */
+}
+
+@media (min-width: 640px) {
+  .section-head {
+    margin-bottom: 3.5rem; /* sm:mb-14 */
+  }
+}
+
+.gap-split {
+  gap: 2.5rem; /* gap-10 */
+}
+
+@media (min-width: 1024px) {
+  .gap-split {
+    gap: 3rem; /* lg:gap-12 */
+  }
+}
+
+.gap-cards {
+  column-gap: 1rem;
+  row-gap: 3rem;
+}
+
+@media (min-width: 640px) {
+  .gap-cards {
+    column-gap: 1.75rem;
+    row-gap: 4rem;
+  }
+}
+
+.gap-tiles {
+  gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .gap-tiles {
+    column-gap: 2.5rem;
+    row-gap: 3.5rem;
+  }
+}
+
+.gap-thumbs {
+  gap: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .gap-thumbs {
+    gap: 1rem;
+  }
 }
 
 .rule {

@@ -13,14 +13,14 @@ export function CommissionCTA({
   imageAlt = "Custom commissioned Chatham Weaves piece",
 }: CommissionCTAProps) {
   return (
-    <section className="bg-ivory py-20 lg:py-28">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <div className="relative overflow-hidden rounded-sm border border-dashed border-seafoam/40 bg-cream/70 p-6 md:p-10 lg:p-12">
+    <section className="bg-ivory section-y">
+      <div className="site-container">
+        <div className="relative overflow-hidden rounded-sm border border-dashed border-seafoam/40 bg-cream/70 p-6 md:p-10">
           <Scallop
             className="pointer-events-none absolute right-6 top-6 ornament-coral opacity-50"
             size={28}
           />
-          <div className="grid items-center gap-12 md:grid-cols-12 md:gap-10">
+          <div className="grid items-center gap-split md:grid-cols-12">
             <div className="md:col-span-5">
               <div className="photo-plate photo-natural rotate-[-0.5deg] !p-2 !pb-2">
                 <div className="relative aspect-[4/5] overflow-hidden bg-linen">
@@ -43,7 +43,7 @@ export function CommissionCTA({
               </h2>
               <p className="mt-5 max-w-md font-serif text-[0.98rem] leading-relaxed text-charcoal-soft">
                 Bridal totes, memorial cuffs, stacked bracelets, kitchen
-                staples — Janene loves making the piece you&apos;ve been
+                staples. Janene loves making the piece you&apos;ve been
                 imagining.
               </p>
               <p className="mt-4 font-script text-xl text-seafoam">

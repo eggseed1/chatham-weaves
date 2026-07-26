@@ -1,6 +1,6 @@
 # Chatham Weaves
 
-Elegant storefront and portfolio for **Chatham Weaves by Janene Marie** — handmade Nantucket baskets, jewelry, accessories, and custom commissions from Chatham, Cape Cod.
+Elegant storefront and portfolio for **Chatham Weaves by Janene Marie**, handmade Nantucket baskets, jewelry, accessories, and custom commissions from Chatham, Cape Cod.
 
 This is **not** an ecommerce site. There is no cart, checkout, or payment processing. Visitors browse the collection and inquire via Instagram.
 
@@ -61,7 +61,7 @@ You manage updates in code for this version. The client does not need to edit th
   name: "My New Basket",
   category: "baskets",            // baskets | jewelry | accessories | one-of-a-kind
   status: "available",            // available | sold | made-to-order | commission-example
-  price: 450,                     // optional — omit for "by inquiry"
+  price: 450,                     // optional, omit for "by inquiry"
   featured: true,                 // show on homepage
   description: "...",
   materials: "...",
@@ -125,7 +125,7 @@ Edit `contact.email` and `contact.location` in `src/config/site.ts`.
 
 ### Update Instagram gallery
 
-Edit `src/data/instagram.ts` — add image files under `public/images/instagram/`, then add entries to the array.
+Edit `src/data/instagram.ts`, add image files under `public/images/instagram/`, then add entries to the array.
 
 ### Placeholder copy
 
@@ -154,7 +154,7 @@ Copy marked `[PLACEHOLDER: ...]` (especially on About) should be replaced with t
 
 ## Design direction
 
-Warm ivory / linen / muted navy / coastal blue. Editorial serif headings (Cormorant Garamond) + understated sans (Outfit). Photography-led, boutique, New England coastal — not generic ecommerce.
+Warm ivory / linen / muted navy / coastal blue. Editorial serif headings (Cormorant Garamond) + understated sans (Outfit). Photography-led, boutique, New England coastal, not generic ecommerce.
 
 ## License / content
 
