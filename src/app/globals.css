@@ -54,10 +54,71 @@
 }
 
 html {
-  /* Native smooth scroll as fallback; Lenis handles the primary feel */
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
+  background-color: var(--ivory);
+  overscroll-behavior: none;
 }
 
+body {
+  /* Isolate so the fixed weave (z-index: -1) stays above the html fill
+     on mobile Safari — otherwise the pattern paints behind opaque html. */
+  isolation: isolate;
+  background-color: transparent;
+  color: var(--navy);
+  font-family: var(--font-serif), ui-serif, Georgia, "Times New Roman", serif;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Fixed weave layer — stays put while Lenis scrolls (avoids tile repaint jitter) */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-color: var(--ivory);
+  background-image:
+    linear-gradient(
+      180deg,
+      rgba(246, 238, 227, 0.62) 0%,
+      rgba(246, 238, 227, 0.52) 50%,
+      rgba(239, 228, 210, 0.64) 100%
+    ),
+    url("/textures/chatham-weave.svg");
+  background-size: auto, 48px 48px;
+  background-repeat: repeat;
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/* Soft translucent surfaces over the fixed weave */
+.bg-ivory {
+  background-color: color-mix(in srgb, var(--ivory) 86%, transparent) !important;
+}
+
+.bg-cream {
+  background-color: color-mix(in srgb, var(--cream) 82%, transparent) !important;
+}
+
+.bg-cream\/80 {
+  background-color: color-mix(in srgb, var(--cream) 74%, transparent) !important;
+}
+
+.bg-cream\/70 {
+  background-color: color-mix(in srgb, var(--cream) 64%, transparent) !important;
+}
+
+.site-chrome {
+  background-color: color-mix(in srgb, var(--ivory) 94%, transparent) !important;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+/* Lenis: never let CSS smooth fight the virtual scroll */
 html.lenis,
 html.lenis body {
   height: auto;
@@ -67,18 +128,8 @@ html.lenis body {
   scroll-behavior: auto !important;
 }
 
-body {
-  background-color: var(--ivory);
-  color: var(--navy);
-  font-family: var(--font-serif), ui-serif, Georgia, "Times New Roman", serif;
-  font-size: 1.0625rem;
-  line-height: 1.65;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-image:
-    radial-gradient(ellipse 80% 50% at 100% 0%, rgba(143, 180, 201, 0.12), transparent 55%),
-    radial-gradient(ellipse 60% 40% at 0% 100%, rgba(127, 168, 160, 0.1), transparent 50%),
-    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+.lenis.lenis-stopped {
+  overflow: hidden;
 }
 
 .sepia-history {
@@ -136,20 +187,33 @@ body {
   }
 }
 
-/* Clear fixed header (banner + logo bar) */
+/* Clear fixed header — mobile has no banner, so keep this tight to content */
 .page-top {
-  padding-top: 7rem; /* ~112px */
+  padding-top: 5.75rem; /* ~92px logo bar */
+}
+
+@media (min-width: 768px) {
+  .page-top {
+    padding-top: 7rem; /* banner + logo bar */
+  }
 }
 
 @media (min-width: 1024px) {
   .page-top {
-    padding-top: 8rem; /* ~128px */
+    padding-top: 8rem;
   }
 }
 
 .page-shell {
-  padding-top: 7rem;
-  padding-bottom: 6rem;
+  padding-top: 5.75rem;
+  padding-bottom: 5rem;
+}
+
+@media (min-width: 768px) {
+  .page-shell {
+    padding-top: 7rem;
+    padding-bottom: 6rem;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -272,20 +336,10 @@ body {
 .texture-weave {
   background-color: var(--cream);
   background-image:
-    repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 3px,
-      rgba(36, 52, 71, 0.028) 3px,
-      rgba(36, 52, 71, 0.028) 4px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      transparent,
-      transparent 3px,
-      rgba(127, 168, 160, 0.04) 3px,
-      rgba(127, 168, 160, 0.04) 4px
-    );
+    linear-gradient(rgba(239, 228, 210, 0.72), rgba(239, 228, 210, 0.78)),
+    url("/textures/chatham-weave-tile.jpg");
+  background-size: auto, 110px 110px;
+  background-repeat: repeat;
 }
 
 .texture-coastal {
@@ -368,14 +422,22 @@ body {
   color: var(--sky);
 }
 
+:root {
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-inout-soft: cubic-bezier(0.45, 0.05, 0.25, 1);
+  --motion-fast: 220ms;
+  --motion-med: 420ms;
+  --motion-slow: 780ms;
+}
+
 @keyframes fade-up {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translate3d(0, 12px, 0);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
@@ -391,36 +453,44 @@ body {
 @keyframes float-soft {
   0%,
   100% {
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
   }
   50% {
-    transform: translateY(-4px);
+    transform: translate3d(0, -5px, 0);
   }
 }
 
 .animate-fade-up {
-  animation: fade-up 0.85s ease-out both;
+  animation: fade-up var(--motion-slow) var(--ease-out-soft) both;
 }
 
 .animate-fade-in {
-  animation: fade-in 0.7s ease-out both;
+  animation: fade-in var(--motion-med) var(--ease-out-soft) both;
 }
 
 .animate-float {
-  animation: float-soft 5s ease-in-out infinite;
+  animation: float-soft 6.5s var(--ease-inout-soft) infinite;
 }
 
 .delay-100 {
-  animation-delay: 100ms;
+  animation-delay: 90ms;
 }
 .delay-200 {
-  animation-delay: 200ms;
+  animation-delay: 170ms;
 }
 .delay-300 {
-  animation-delay: 300ms;
+  animation-delay: 250ms;
 }
 .delay-400 {
-  animation-delay: 400ms;
+  animation-delay: 330ms;
+}
+
+/* Shared interactive easing — keep hovers from feeling abrupt */
+a,
+button {
+  transition-property: color, background-color, border-color, opacity, transform;
+  transition-duration: var(--motion-fast);
+  transition-timing-function: var(--ease-out-soft);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -432,5 +502,10 @@ body {
   .animate-fade-in,
   .animate-float {
     animation: none !important;
+  }
+
+  a,
+  button {
+    transition: none !important;
   }
 }

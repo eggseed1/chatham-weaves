@@ -52,7 +52,7 @@ export function InstagramGallery({ posts }: InstagramGalleryProps) {
                   alt={post.alt}
                   fill
                   sizes="(max-width: 640px) 50vw, 25vw"
-                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                  className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.03]"
                   loading="lazy"
                 />
               </div>

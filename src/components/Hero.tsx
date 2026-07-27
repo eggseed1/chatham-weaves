@@ -18,7 +18,7 @@ export function Hero({
   imageAlt = "Handmade Nantucket weave by Chatham Weaves",
 }: HeroProps) {
   return (
-    <section className="relative overflow-hidden bg-ivory page-top pb-16 lg:pb-24">
+    <section className="relative overflow-hidden bg-ivory page-top pb-10 md:pb-14 lg:pb-20">
       <div
         className="pointer-events-none absolute inset-y-0 right-0 hidden w-[38%] texture-coastal opacity-80 lg:block"
         aria-hidden
@@ -32,10 +32,10 @@ export function Hero({
         size={26}
       />
 
-      <div className="site-container relative grid items-end gap-split lg:grid-cols-12">
+      <div className="site-container relative grid items-end gap-8 md:gap-10 lg:grid-cols-12 lg:gap-12">
         <div className="lg:col-span-8 lg:pr-4">
-          <div className="photo-plate photo-natural rotate-[-0.4deg] md:rotate-[-0.6deg]">
-            <div className="relative aspect-[5/4] overflow-hidden bg-linen md:aspect-[16/11]">
+          <div className="photo-plate photo-natural animate-fade-in rotate-[-0.4deg] md:rotate-[-0.6deg]">
+            <div className="relative aspect-[3/2] overflow-hidden bg-linen md:aspect-[16/11]">
               <Image
                 src={imageSrc}
                 alt={imageAlt}
@@ -56,19 +56,19 @@ export function Hero({
 
         <div className="lg:col-span-4 lg:mb-6">
           <DecorativeRule motif="scallop" className="max-w-[11rem] animate-fade-up" />
-          <h1 className="animate-fade-up delay-100 mt-5 font-serif text-[2.35rem] leading-[1.15] tracking-tight text-navy md:text-5xl">
+          <h1 className="animate-fade-up delay-100 mt-4 font-serif text-[2.35rem] leading-[1.15] tracking-tight text-navy md:mt-5 md:text-5xl">
             {siteConfig.name}
           </h1>
-          <p className="animate-fade-up delay-200 mt-5 max-w-sm font-serif text-[0.98rem] italic leading-relaxed text-charcoal-soft">
+          <p className="animate-fade-up delay-200 mt-4 max-w-sm font-serif text-[0.98rem] italic leading-relaxed text-charcoal-soft md:mt-5">
             {siteConfig.tagline}
           </p>
-          <p className="animate-fade-up delay-200 mt-3 font-script text-lg text-seafoam">
+          <p className="animate-fade-up delay-200 mt-2 font-script text-lg text-seafoam md:mt-3">
             baskets, bracelets & commissions by Janene Marie
           </p>
-          <div className="animate-fade-up delay-300 mt-8">
+          <div className="animate-fade-up delay-300 mt-6 md:mt-8">
             <Link
               href="/collection"
-              className="inline-flex items-center gap-2 rounded-full border border-seafoam/50 bg-seafoam px-6 py-2.5 font-sans text-[0.68rem] uppercase tracking-[0.18em] text-white transition-colors hover:bg-navy hover:border-navy"
+              className="inline-flex items-center gap-2 rounded-full border border-seafoam/50 bg-seafoam px-6 py-2.5 font-sans text-[0.68rem] uppercase tracking-[0.18em] text-white hover:bg-navy hover:border-navy"
             >
               Explore the Collection
             </Link>

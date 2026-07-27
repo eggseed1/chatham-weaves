@@ -72,12 +72,12 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${serif.variable} ${labelSerif.variable} ${script.variable} h-full`}
+      className={`${serif.variable} ${labelSerif.variable} ${script.variable}`}
     >
-      <body className="min-h-full flex flex-col font-serif antialiased">
+      <body className="flex flex-col font-serif antialiased">
         <SmoothScroll>
           <Header />
-          <main className="flex-1">{children}</main>
+          <main>{children}</main>
           <Footer />
         </SmoothScroll>
       </body>

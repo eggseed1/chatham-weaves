@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="cane" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e8dcc8"/>
+      <stop offset="45%" stop-color="#d9c6a8"/>
+      <stop offset="100%" stop-color="#cbb892"/>
+    </linearGradient>
+    <linearGradient id="stave" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f0e6d4"/>
+      <stop offset="100%" stop-color="#dcc9ab"/>
+    </linearGradient>
+  </defs>
+  <rect width="48" height="48" fill="#ebe0cc"/>
+  <!-- vertical staves -->
+  <g fill="url(#stave)" opacity="0.95">
+    <rect x="2" y="0" width="4" height="48"/>
+    <rect x="10" y="0" width="4" height="48"/>
+    <rect x="18" y="0" width="4" height="48"/>
+    <rect x="26" y="0" width="4" height="48"/>
+    <rect x="34" y="0" width="4" height="48"/>
+    <rect x="42" y="0" width="4" height="48"/>
+  </g>
+  <!-- horizontal weavers, over/under suggestion -->
+  <g fill="url(#cane)">
+    <rect x="0" y="1" width="48" height="2.2" opacity="0.9"/>
+    <rect x="0" y="5" width="48" height="2.2" opacity="0.75"/>
+    <rect x="0" y="9" width="48" height="2.2" opacity="0.9"/>
+    <rect x="0" y="13" width="48" height="2.2" opacity="0.75"/>
+    <rect x="0" y="17" width="48" height="2.2" opacity="0.9"/>
+    <rect x="0" y="21" width="48" height="2.2" opacity="0.75"/>
+    <rect x="0" y="25" width="48" height="2.2" opacity="0.9"/>
+    <rect x="0" y="29" width="48" height="2.2" opacity="0.75"/>
+    <rect x="0" y="33" width="48" height="2.2" opacity="0.9"/>
+    <rect x="0" y="37" width="48" height="2.2" opacity="0.75"/>
+    <rect x="0" y="41" width="48" height="2.2" opacity="0.9"/>
+    <rect x="0" y="45" width="48" height="2.2" opacity="0.75"/>
+  </g>
+  <!-- soft stave highlights over weavers for interlocking feel -->
+  <g fill="#f4ebdc" opacity="0.35">
+    <rect x="2.5" y="0" width="3" height="48"/>
+    <rect x="18.5" y="0" width="3" height="48"/>
+    <rect x="34.5" y="0" width="3" height="48"/>
+  </g>
+  <g fill="#c4ad8a" opacity="0.18">
+    <rect x="10.5" y="0" width="3" height="48"/>
+    <rect x="26.5" y="0" width="3" height="48"/>
+    <rect x="42.5" y="0" width="3" height="48"/>
+  </g>
+</svg>

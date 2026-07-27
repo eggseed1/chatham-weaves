@@ -1,41 +1,56 @@
 "use client";
 
-import { ReactLenis } from "lenis/react";
-import { useEffect, useState, type ReactNode } from "react";
+import { useEffect, type ReactNode } from "react";
+import Lenis from "lenis";
 import "lenis/dist/lenis.css";
 
 interface SmoothScrollProps {
   children: ReactNode;
 }
 
-export function SmoothScroll({ children }: SmoothScrollProps) {
-  const [reduceMotion, setReduceMotion] = useState(false);
+declare global {
+  interface Window {
+    __lenis?: Lenis;
+  }
+}
 
+/**
+ * Slow, smooth wheel scrolling. Instantiated once via Lenis (not ReactLenis root)
+ * to avoid the remount/layout jitter that fought the page before.
+ */
+export function SmoothScroll({ children }: SmoothScrollProps) {
   useEffect(() => {
-    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const sync = () => setReduceMotion(mq.matches);
-    sync();
-    mq.addEventListener("change", sync);
-    return () => mq.removeEventListener("change", sync);
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (reduceMotion.matches) return;
+
+    const lenis = new Lenis({
+      // Slightly higher lerp = less laggy catch-up; easing keeps it soft
+      lerp: 0.12,
+      duration: 1.1,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smoothWheel: true,
+      wheelMultiplier: 0.75,
+      touchMultiplier: 1.2,
+      syncTouch: false,
+      autoRaf: true,
+      anchors: true,
+      allowNestedScroll: true,
+      overscroll: false,
+    });
+
+    window.__lenis = lenis;
+
+    const ro = new ResizeObserver(() => {
+      lenis.resize();
+    });
+    ro.observe(document.documentElement);
+
+    return () => {
+      ro.disconnect();
+      if (window.__lenis === lenis) delete window.__lenis;
+      lenis.destroy();
+    };
   }, []);
 
-  if (reduceMotion) {
-    return <>{children}</>;
-  }
-
-  return (
-    <ReactLenis
-      root
-      options={{
-        autoRaf: true,
-        lerp: 0.06,
-        duration: 1.5,
-        smoothWheel: true,
-        wheelMultiplier: 0.85,
-        touchMultiplier: 1.1,
-      }}
-    >
-      {children}
-    </ReactLenis>
-  );
+  return <>{children}</>;
 }

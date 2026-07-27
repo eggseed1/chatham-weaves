@@ -17,12 +17,14 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
     if (!open) return;
     const prev = document.body.style.overflow;
     document.body.style.overflow = "hidden";
+    window.__lenis?.stop();
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
     };
     window.addEventListener("keydown", onKey);
     return () => {
       document.body.style.overflow = prev;
+      window.__lenis?.start();
       window.removeEventListener("keydown", onKey);
     };
   }, [open, onClose]);
@@ -84,42 +86,16 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
 
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    let ticking = false;
-    const onScroll = () => {
-      if (ticking) return;
-      ticking = true;
-      requestAnimationFrame(() => {
-        const y = window.scrollY;
-        // Hysteresis so the bar doesn't flicker around the threshold
-        setScrolled((prev) => {
-          if (prev && y < 8) return false;
-          if (!prev && y > 24) return true;
-          return prev;
-        });
-        ticking = false;
-      });
-    };
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   return (
     <>
-      <header className="fixed inset-x-0 top-0 z-40 bg-ivory/95 backdrop-blur-[2px]">
-        <div className="hidden border-b border-dashed border-seafoam/25 bg-cream/70 md:block">
+      <header className="site-chrome fixed inset-x-0 top-0 z-40">
+        <div className="hidden border-b border-dashed border-seafoam/25 bg-cream/80 md:block">
           <p className="site-container py-1.5 text-center font-script text-[0.95rem] text-seafoam">
             handmade on Cape Cod · woven by Janene
           </p>
         </div>
-        <div
-          className={`site-container flex items-center justify-between py-3 ${
-            scrolled ? "border-b border-rule" : "border-b border-transparent"
-          }`}
-        >
+        <div className="site-container flex items-center justify-between border-b border-rule py-3">
           <Link href="/" className="transition-opacity hover:opacity-85">
             <Logo size="md" />
           </Link>
